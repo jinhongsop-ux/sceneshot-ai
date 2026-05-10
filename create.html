@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SceneShot AI - 上传并创作</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/shared.css"/>
+<script src="js/shared.js"></script>
+<script>tailwind.config = TAILWIND_CONFIG;</script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<main class="pt-[100px] md:pt-[120px] pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-12">
+<!-- Header -->
+<div class="flex justify-between items-center">
+    <h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg reveal" data-i18n="create.title">开始创作</h1>
+    <div id="credit-display" class="hidden bg-primary-container text-on-primary-container px-4 py-2 rounded-full font-label-bold text-label-bold flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+        <span id="credit-count">0</span> <span data-i18n="create.credits">积分</span>
+    </div>
+</div>
+
+<!-- Privacy notice -->
+<p class="text-on-surface-variant text-sm text-center -mt-4">请仅上传你本人或已获得授权的照片。生成结果为 AI 内容，不代表真实现场或真实直播画面。</p>
+
+<!-- CREATION STEPS -->
+<div id="creation-steps">
+<!-- Step 1: Upload -->
+<section class="creation-step flex flex-col gap-6 items-center w-full max-w-3xl mx-auto">
+    <p class="text-on-surface-variant font-body-md text-body-md text-center" data-i18n="create.upload.desc">上传一张清晰的照片，开始魔法之旅。</p>
+    <div id="upload-zone" class="w-full glass-panel rounded-2xl border-2 border-dashed border-outline-variant/40 p-12 flex flex-col items-center justify-center gap-4 cursor-pointer hover:border-primary transition-colors group">
+        <input type="file" id="file-input" accept="image/jpeg,image/jpg,image/png,image/webp" class="hidden"/>
+        <div class="upload-icon bg-primary-container text-primary p-4 rounded-full group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">cloud_upload</span>
+        </div>
+        <h3 class="upload-text font-headline-md text-headline-md" data-i18n="create.upload.drag">拖放照片到这里</h3>
+        <p class="text-on-surface-variant font-body-md text-body-md" data-i18n="create.upload.click">或点击从设备中选择</p>
+        <p class="text-caption text-on-surface-variant mt-2">支持 JPG / PNG / WebP，最大 10MB</p>
+        <div class="mt-2 flex items-center gap-2 text-primary font-caption text-caption opacity-70">
+            <span class="material-symbols-outlined text-[16px]">lock</span>
+            <span data-i18n="create.upload.privacy">您的照片仅用于生成，之后安全删除。</span>
+        </div>
+    </div>
+</section>
+
+<!-- Step 2: Scene Selection -->
+<section class="creation-step flex flex-col gap-6 w-full mt-8">
+    <div>
+        <h2 class="font-headline-md text-headline-md" data-i18n="create.scene.title">选择场景</h2>
+        <p class="text-on-surface-variant font-body-md text-body-md" data-i18n="create.scene.desc">选择你的肖像所处的环境。</p>
+    </div>
+    <div id="scene-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <!-- Loaded from API -->
+        <div class="col-span-full text-center py-8 text-on-surface-variant">加载中...</div>
+    </div>
+</section>
+
+<!-- Step 3: Settings -->
+<section class="creation-step flex flex-col gap-6 w-full max-w-3xl mx-auto mt-8 bg-surface-container-low p-8 rounded-2xl">
+    <h2 class="font-headline-md text-headline-md border-b border-outline-variant/20 pb-4" data-i18n="create.settings.title">生成设置</h2>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="flex-1 flex flex-col gap-4">
+            <label class="font-label-bold text-label-bold text-on-surface" data-i18n="create.settings.ratio">宽高比</label>
+            <div class="ratio-btn-group flex gap-4">
+                <button class="ratio-btn active" data-ratio="1:1">
+                    <span class="material-symbols-outlined">crop_square</span>
+                    <span>1:1</span>
+                </button>
+                <button class="ratio-btn" data-ratio="4:3">
+                    <span class="material-symbols-outlined">crop_landscape</span>
+                    <span>4:3</span>
+                </button>
+                <button class="ratio-btn" data-ratio="3:4">
+                    <span class="material-symbols-outlined">crop_portrait</span>
+                    <span>3:4</span>
+                </button>
+                <button class="ratio-btn" data-ratio="16:9">
+                    <span class="material-symbols-outlined">wide_screen</span>
+                    <span>16:9</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex justify-center">
+        <button id="generate-btn" class="cta-btn px-12 py-4 text-base">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+            <span data-i18n="create.generate">开始生成</span>
+        </button>
+    </div>
+</section>
+</div>
+
+<!-- LOADING STATE -->
+<div id="loading-section" class="hidden flex-col items-center justify-center gap-8 py-20">
+    <div class="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+    <h2 class="font-headline-md text-headline-md" data-i18n="create.loading">正在生成你的场景...</h2>
+    <p class="text-on-surface-variant font-body-md text-body-md" data-i18n="create.loading.time">通常需要 10-15 秒</p>
+    <div class="w-full max-w-md bg-surface-container rounded-full h-2 overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full progress-bar-animated"></div>
+    </div>
+</div>
+
+<!-- RESULT STATE -->
+<div id="result-section" class="hidden flex-col items-center gap-8 py-8">
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-center">你的场景已就绪！</h2>
+
+    <!-- Result image -->
+    <div id="result-image-container" class="w-full max-w-3xl relative overflow-hidden rounded-2xl shadow-[0_30px_80px_rgba(35,31,27,0.08)] bg-surface-container-lowest border border-outline-variant/20">
+        <img id="result-image" class="w-full h-auto" src="" alt="AI Result"/>
+        <div id="watermark-badge" class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full font-label-bold text-label-bold text-on-surface shadow-sm border border-outline-variant/20">
+            免费带水印预览
+        </div>
+    </div>
+
+    <!-- Unlock status -->
+    <div id="unlock-status" class="text-center">
+        <p class="text-on-surface-variant font-body-md text-body-md">当前为免费带水印预览图。满意效果后，可解锁高清无水印版本。</p>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="flex flex-wrap gap-4 justify-center">
+        <button id="download-watermark-btn" class="outline-btn px-6 py-3">
+            <span class="material-symbols-outlined">download</span>
+            <span>下载带水印图</span>
+        </button>
+        <button id="unlock-hd-btn" class="cta-btn px-6 py-3">
+            <span class="material-symbols-outlined">lock_open</span>
+            <span>¥1.99 解锁高清无水印</span>
+        </button>
+        <button id="buy-pack-btn" class="outline-btn px-6 py-3">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span>购买套餐更划算</span>
+        </button>
+    </div>
+
+    <div class="flex gap-4">
+        <button id="try-another-btn" class="outline-btn px-8 py-3">
+            <span class="material-symbols-outlined">refresh</span>
+            <span>再试一次</span>
+        </button>
+        <button id="change-scene-btn" class="outline-btn px-8 py-3">
+            <span class="material-symbols-outlined">swap_horiz</span>
+            <span>换个场景</span>
+        </button>
+    </div>
+</div>
+</main>
+<script>
+renderNavbar('create');
+renderFooter();
+renderBottomBar();
+
+// State
+let uploadedFile = null;
+let uploadedFileDataUrl = null;
+let selectedSceneSlug = 'korean-baseball-broadcast';
+let currentGeneration = null;
+
+// Load scenes from API
+async function loadScenes() {
+    try {
+        const resp = await apiCall('GET', '/api/scenes');
+        const scenes = resp.scenes || [];
+        const grid = document.getElementById('scene-grid');
+        if (!scenes.length) return;
+
+        const gradients = {
+            'korean-baseball-broadcast': 'from-blue-400 to-blue-600',
+            'executive-office': 'from-amber-600 to-amber-800',
+            'cyberpunk-city': 'from-purple-500 to-indigo-700',
+            'mountain-summit': 'from-orange-400 to-rose-500',
+            'morning-coffee': 'from-amber-500 to-amber-700',
+            'power-lift': 'from-red-500 to-red-700',
+        };
+
+        grid.innerHTML = scenes.map((s, i) => `
+            <div class="scene-select-card relative rounded-xl overflow-hidden cursor-pointer shadow-[0_16px_40px_rgba(35,31,27,0.06)] border-2 ${i === 0 ? 'border-primary' : 'border-transparent hover:border-primary/50'} group"
+                 data-scene-slug="${s.slug}">
+                <div class="w-full h-48 bg-gradient-to-br ${gradients[s.slug] || 'from-gray-400 to-gray-600'} flex items-center justify-center">
+                    <span class="text-white/60 font-display-xl text-lg">${s.name_zh || s.name}</span>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4">
+                    <span class="text-white font-label-bold text-label-bold">${s.name_zh || s.name}</span>
+                </div>
+                ${s.is_featured ? '<div class="absolute top-2 left-2 bg-primary text-on-primary backdrop-blur-md px-2.5 py-1 rounded-full font-caption text-caption font-semibold">热门</div>' : ''}
+                <div class="scene-check absolute top-2 right-2 bg-primary text-on-primary rounded-full p-1" ${i === 0 ? '' : 'style="display:none"'}>
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                </div>
+            </div>
+        `).join('');
+
+        // Re-init scene selection
+        initSceneSelection();
+    } catch (e) {
+        console.error('Failed to load scenes:', e);
+    }
+}
+
+// Update credit display
+function updateCreditDisplay() {
+    const el = document.getElementById('credit-display');
+    const countEl = document.getElementById('credit-count');
+    if (AuthState.isLoggedIn && AuthState.entitlements) {
+        el.classList.remove('hidden');
+        el.classList.add('flex');
+        const total = (AuthState.entitlements.free_trials_remaining || 0) + (AuthState.entitlements.paid_unlocks_remaining || 0);
+        countEl.textContent = total;
+    }
+}
+
+// File upload handling
+function handleFileUpload(file, zone) {
+    if (file.size > 10 * 1024 * 1024) {
+        showToast('文件大小不能超过 10MB', 'error');
+        return;
+    }
+    const allowed = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+    if (!allowed.includes(file.type)) {
+        showToast('仅支持 JPG/PNG/WebP 格式', 'error');
+        return;
+    }
+
+    uploadedFile = file;
+    const icon = zone.querySelector('.upload-icon');
+    const text = zone.querySelector('.upload-text');
+    if (icon) icon.innerHTML = '<span class="material-symbols-outlined text-[48px] text-primary" style="font-variation-settings: \'FILL\' 1;">check_circle</span>';
+    if (text) text.textContent = file.name;
+    zone.classList.add('border-primary');
+    zone.classList.remove('border-dashed');
+
+    // Read as data URL for preview
+    const reader = new FileReader();
+    reader.onload = (e) => { uploadedFileDataUrl = e.target.result; };
+    reader.readAsDataURL(file);
+}
+
+// Get selected ratio
+function getSelectedRatio() {
+    const active = document.querySelector('.ratio-btn.active');
+    return active ? active.dataset.ratio : '1:1';
+}
+
+// Generate button
+document.getElementById('generate-btn').addEventListener('click', async () => {
+    if (!uploadedFile) {
+        showToast('请先上传一张照片', 'error');
+        return;
+    }
+
+    if (!AuthState.isLoggedIn) {
+        // Save pending action and show auth modal
+        AuthState.pendingAction = () => doGenerate();
+        renderAuthModal('register');
+        return;
+    }
+
+    doGenerate();
+});
+
+async function doGenerate() {
+    const steps = document.querySelectorAll('.creation-step');
+    const loadingSection = document.getElementById('loading-section');
+    const resultSection = document.getElementById('result-section');
+
+    steps.forEach(s => s.style.display = 'none');
+    loadingSection.style.display = 'flex';
+    resultSection.style.display = 'none';
+
+    try {
+        // Upload file first
+        const uploadResp = await apiCall('POST', '/api/uploads', {
+            filename: uploadedFile.name,
+            mime_type: uploadedFile.type,
+            size_bytes: uploadedFile.size,
+            data_url: uploadedFileDataUrl,
+        });
+
+        // Create generation
+        const genResp = await apiCall('POST', '/api/generations', {
+            upload_id: uploadResp.upload.id,
+            scene_slug: selectedSceneSlug,
+            aspect_ratio: getSelectedRatio(),
+            quality: 'standard',
+        });
+
+        currentGeneration = genResp.generation;
+
+        // Poll for completion
+        await pollGeneration(currentGeneration.id);
+
+    } catch (err) {
+        loadingSection.style.display = 'none';
+        steps.forEach(s => s.style.display = '');
+        if (err.message.includes('没有可用额度') || err.message.includes('402')) {
+            showToast('没有可用额度，请先购买套餐', 'error');
+            AuthState.pendingAction = () => doGenerate();
+            renderPurchaseModal();
+        } else {
+            showToast('生成失败: ' + err.message, 'error');
+        }
+    }
+});
+
+async function pollGeneration(genId) {
+    const maxAttempts = 30;
+    for (let i = 0; i < maxAttempts; i++) {
+        await new Promise(r => setTimeout(r, 1500));
+        try {
+            const resp = await apiCall('GET', `/api/generations/${genId}`);
+            const gen = resp.generation;
+            if (gen.status === 'succeeded') {
+                showResult(gen);
+                return;
+            } else if (gen.status === 'failed') {
+                throw new Error(gen.error_message || '生成失败');
+            }
+            // Continue polling if pending/processing
+        } catch (err) {
+            document.getElementById('loading-section').style.display = 'none';
+            document.querySelectorAll('.creation-step').forEach(s => s.style.display = '');
+            showToast('生成失败: ' + err.message, 'error');
+            return;
+        }
+    }
+    document.getElementById('loading-section').style.display = 'none';
+    document.querySelectorAll('.creation-step').forEach(s => s.style.display = '');
+    showToast('生成超时，请重试', 'error');
+}
+
+function showResult(gen) {
+    const loadingSection = document.getElementById('loading-section');
+    const resultSection = document.getElementById('result-section');
+    const resultImage = document.getElementById('result-image');
+    const watermarkBadge = document.getElementById('watermark-badge');
+    const unlockStatus = document.getElementById('unlock-status');
+    const unlockBtn = document.getElementById('unlock-hd-btn');
+    const downloadBtn = document.getElementById('download-watermark-btn');
+
+    loadingSection.style.display = 'none';
+    resultSection.style.display = 'flex';
+
+    currentGeneration = gen;
+
+    if (gen.is_unlocked) {
+        resultImage.src = gen.hd_url;
+        watermarkBadge.style.display = 'none';
+        unlockStatus.innerHTML = '<p class="text-green-600 font-label-bold text-label-bold">已解锁高清无水印版本</p>';
+        unlockBtn.style.display = 'none';
+        downloadBtn.querySelector('span:last-child').textContent = '下载高清图';
+    } else {
+        resultImage.src = gen.watermarked_url;
+        watermarkBadge.style.display = '';
+        unlockStatus.innerHTML = '<p class="text-on-surface-variant font-body-md">当前为免费带水印预览图。满意效果后，可解锁高清无水印版本。</p>';
+        unlockBtn.style.display = '';
+        downloadBtn.querySelector('span:last-child').textContent = '下载带水印图';
+    }
+
+    // Update entitlements display
+    updateEntitlements();
+}
+
+async function updateEntitlements() {
+    try {
+        const resp = await apiCall('GET', '/api/entitlements');
+        AuthState.entitlements = resp.entitlements;
+        updateCreditDisplay();
+    } catch (e) {}
+}
+
+// Download watermark
+document.getElementById('download-watermark-btn').addEventListener('click', () => {
+    if (!currentGeneration) return;
+    const url = currentGeneration.is_unlocked ? currentGeneration.hd_url : currentGeneration.watermarked_url;
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `sceneshot-ai-${currentGeneration.id}.png`;
+    a.click();
+});
+
+// Unlock HD
+document.getElementById('unlock-hd-btn').addEventListener('click', async () => {
+    if (!currentGeneration) return;
+
+    // Check if user has paid unlocks
+    if (AuthState.entitlements && (AuthState.entitlements.paid_unlocks_remaining > 0 || AuthState.entitlements.credits_balance > 0)) {
+        try {
+            const resp = await apiCall('POST', `/api/generations/${currentGeneration.id}/unlock-hd`);
+            AuthState.entitlements = resp.entitlements;
+            showResult(resp.generation);
+            showToast('已成功解锁高清无水印版本！', 'success');
+        } catch (err) {
+            showToast(err.message, 'error');
+        }
+    } else {
+        // Show purchase modal
+        AuthState.pendingAction = async () => {
+            // After purchase, try unlock again
+            try {
+                const resp = await apiCall('POST', `/api/generations/${currentGeneration.id}/unlock-hd`);
+                AuthState.entitlements = resp.entitlements;
+                showResult(resp.generation);
+                showToast('已成功解锁高清无水印版本！', 'success');
+            } catch (err) {
+                showToast(err.message, 'error');
+            }
+        };
+        renderPurchaseModal();
+    }
+});
+
+// Buy pack
+document.getElementById('buy-pack-btn').addEventListener('click', () => {
+    renderPurchaseModal();
+});
+
+// Try another
+document.getElementById('try-another-btn').addEventListener('click', () => {
+    document.getElementById('result-section').style.display = 'none';
+    document.querySelectorAll('.creation-step').forEach(s => s.style.display = '');
+    // Reset upload
+    uploadedFile = null;
+    uploadedFileDataUrl = null;
+    const zone = document.getElementById('upload-zone');
+    zone.classList.remove('border-primary');
+    zone.classList.add('border-dashed');
+    zone.querySelector('.upload-icon').innerHTML = '<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: \'FILL\' 1;">cloud_upload</span>';
+    zone.querySelector('.upload-text').textContent = '拖放照片到这里';
+});
+
+// Change scene
+document.getElementById('change-scene-btn').addEventListener('click', () => {
+    document.getElementById('result-section').style.display = 'none';
+    document.querySelectorAll('.creation-step').forEach(s => s.style.display = '');
+});
+
+// Scene selection tracking
+document.addEventListener('click', (e) => {
+    const card = e.target.closest('.scene-select-card');
+    if (card) {
+        selectedSceneSlug = card.dataset.sceneSlug;
+    }
+});
+
+// Init
+loadScenes();
+updateCreditDisplay();
+</script>
+</body>
+</html>

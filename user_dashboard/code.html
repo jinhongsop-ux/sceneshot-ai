@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SceneShot AI - Dashboard</title>
+<script type='text/javascript' nonce='/Kjg7Wj3ZhrjFLQH3E6yyA==' src='https://contribution.usercontent.google.com/ng_XY9E_qh5h_EqbTbYbNLhSpYU6GaFEPRf12rWsjBalKwgOxFubqbkXW6xbGIOIjSywDIHOgsDtbbbpZQtK5b0Oa1XVYwF38IF-FnY-A9fIu8zX7aeSfPOzPwBLCa4PuDDopXLLBMPRYen1jJqhjWqo_doOHd0-USUS7UGyQ05-5I3mPsWMgshjOQphl99pfcwORC8WWVzFOZWOZdbcfA--3SWzaOy8Fwqzm1usbP1QyHBAIZ2H6OqgSgnfMz_Wo_kcMcdSfV0wKcSCEjj-hOtC9SJJMLPx486EMf3dS14SGJTZ8_QY3PZQ0jQhbYSEWUzAaoNtG6lfj2_1bsgRVOa5mvZh2m6yBUw_e3RQTBd9tWu9IbTyc5NUNdXT0G0xQy18lVht_tQCnD5FF2fW1MNLnLN-dHOviAl-BmM5ZTlYBurOyI1UXd3OAEcz-XdwabTTxhLM3Gv0qtuzFY6ujJTeAESKZhhxzV-CaJ0A6LsXuK0w2xC5AnPoFLotvG8dbna7g6sJmocZS4o8eZgc3kathFrwNaIKcehlgKiA8d9qNVb8yWEsIK0rSPF27MyUiTkDjWFWqh2JjgAsiXTiOuov9rNClPKS-oIkybQxuO6V1R0hIZSljprVzWoEbCaFBkMgJUF1NNP3eWStVJe2FWpfvhiK0OgxIIp6lGleN5TgKZZiaRB81zvSquIo2PwgUkOwowmJz7KE2l-f2AFiBJ_BB119xLer5U7PmrNkvjWuIJaA0uEJ374dhbjbc4btQtT_TkZPOXQHljLal_2ehNvQeAVyJ3fz9Q0_3LDU'></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Outfit:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-container": "#efefff",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "secondary": "#841cd8",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-container": "#f3f0ef",
+                        "tertiary-fixed": "#e5e2e1",
+                        "outline": "#747687",
+                        "surface-dim": "#d9dadb",
+                        "on-background": "#191c1d",
+                        "inverse-primary": "#b8c4ff",
+                        "background": "#f8f9fa",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary-fixed": "#2c0050",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary-container": "#6e6d6d",
+                        "surface-variant": "#e1e3e4",
+                        "error": "#ba1a1a",
+                        "surface-container": "#edeeef",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary": "#0041de",
+                        "primary-fixed": "#dde1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9fa",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#565555",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-fixed-variant": "#0036bc",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#fffbff",
+                        "primary-container": "#2d5cfe",
+                        "outline-variant": "#c4c5d9",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-tint": "#0f4aef",
+                        "on-primary-fixed": "#001355",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed": "#f0dbff",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#434656",
+                        "secondary-container": "#9e42f2",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-xl": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Outfit"],
+                        "headline-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl border-b border-white/20 dark:border-outline-variant/10 shadow-sm">
+<div class="font-display-xl text-headline-md tracking-tighter bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">SceneShot AI</div>
+<!-- Web Navigation -->
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Scenes</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Examples</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block font-label-bold text-label-bold text-on-surface-variant hover:opacity-80 transition-all duration-300">Sign In</button>
+<button class="font-label-bold text-label-bold text-on-primary bg-gradient-to-r from-primary to-secondary rounded-full px-6 py-2 hover:opacity-80 transition-all duration-300 shadow-[0_4px_14px_0_rgba(0,65,222,0.39)] scale-95 active:scale-90">Generate Now</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-[100px] pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter">
+<!-- Side Dashboard Nav (Desktop) -->
+<aside class="hidden md:flex flex-col w-64 shrink-0 pr-8 border-r border-outline-variant/20 h-[calc(100vh-120px)] sticky top-[100px]">
+<div class="flex items-center gap-4 mb-8">
+<img alt="User Profile" class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="A clean, minimalist headshot of a young professional woman with neutral lighting, light mode tech aesthetic, smooth skin, against a pure white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNC-FKj0rVZ19Qlx9pj4O12d7wjkQmXsYkLwNo3I37knaQrH73EJ5AKb-Hg7x_skbLYrvrpJ0xrnmNQ-8kq0WT5vRS-tkWBzJfBHyKUoG-jUm9hOJZuZ-VQxxh3bdRDVQgLfyHHURD0Xl2vP6RG28zmO_UiAmhd4b_ayGoV8Tac8vwb8fHBG6Doy2rBvRjNwrZMZct6I_E-9DkwYP4M6QJKX93acZ1h4ma47iPfcsfuCJ-WgcqU9ERUdZ48od-q6Ovbn7DfXRdlHYw"/>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Alex Rivera</h2>
+<p class="font-caption text-caption text-on-surface-variant">Pro Plan</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-r-full font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined fill">image</span>
+                    My Creations
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-r-full font-label-bold text-label-bold transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+                    Credits
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-r-full font-label-bold text-label-bold transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</nav>
+</aside>
+<!-- Dashboard Canvas -->
+<div class="flex-1 flex flex-col gap-12">
+<!-- Mobile Dashboard Tabs -->
+<div class="md:hidden flex gap-2 overflow-x-auto pb-4 no-scrollbar border-b border-outline-variant/20">
+<a class="whitespace-nowrap px-4 py-2 bg-primary-container text-on-primary-container rounded-full font-label-bold text-label-bold" href="#">My Creations</a>
+<a class="whitespace-nowrap px-4 py-2 text-on-surface-variant hover:bg-surface-variant/50 rounded-full font-label-bold text-label-bold transition-colors" href="#">Credits</a>
+<a class="whitespace-nowrap px-4 py-2 text-on-surface-variant hover:bg-surface-variant/50 rounded-full font-label-bold text-label-bold transition-colors" href="#">Settings</a>
+</div>
+<!-- Credit Balance Bento Card -->
+<section class="glass-panel rounded-xl p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px] fill">auto_awesome</span>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mb-1">Available Balance</p>
+<h3 class="font-display-xl text-headline-lg-mobile md:text-headline-lg text-on-surface flex items-baseline gap-2">
+                            1,240 <span class="font-body-lg text-body-lg text-on-surface-variant">credits</span>
+</h3>
+</div>
+</div>
+<button class="w-full md:w-auto font-label-bold text-label-bold text-on-primary bg-on-surface rounded-full px-8 py-4 hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+                    Buy Credits
+                </button>
+</section>
+<!-- Creations Grid -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h2 class="font-headline-lg text-headline-md text-on-surface">Recent Scenes</h2>
+<button class="font-label-bold text-label-bold text-primary flex items-center gap-1 hover:opacity-80">
+                        Filter <span class="material-symbols-outlined text-[18px]">filter_list</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Grid Item 1 -->
+<div class="group relative rounded-lg overflow-hidden bg-surface shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="aspect-[4/3] bg-surface-variant relative">
+<img alt="Cyberpunk Cityscape" class="w-full h-full object-cover" data-alt="A highly detailed, ultra-realistic AI generated image of a futuristic neon city at night. Bright electric blue and purple gradients illuminate sleek, glassmorphism architecture. High definition, premium tech vibe, clear white spaces contrasting with dark shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOvcGnj3mUEhfz7LFUVqP1SFliXJJW1PSivPJ_q5KB77UT2qbTeYbGD1LYwJJvPqcrppk6N3Qh-hIH4I645UPzj1ZhDaJxk7xc3vKocqkB--7OeetPZeEaIgL_L_aFmOgzILZlwCW4HyTBScrXlB73od_W0ne1ycu9gV3iQPJwJfnnHj2c5h2iitQpVjvYkpztrYKtWSOhmmEsuhk6nmIlmrF3mK-_wSiaOAwfc_CssZEHrQEq3lTp-egmup3z7eUrUlGuET1axOYn"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-caption text-caption text-on-surface">12 Credits</span>
+</div>
+</div>
+<div class="p-4 flex justify-between items-center bg-surface-container-lowest">
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface truncate max-w-[150px]">Neon Future City</h4>
+<p class="font-caption text-caption text-on-surface-variant">2 hours ago</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Grid Item 2 -->
+<div class="group relative rounded-lg overflow-hidden bg-surface shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="aspect-[4/3] bg-surface-variant relative">
+<img alt="Abstract Art" class="w-full h-full object-cover" data-alt="A sophisticated digital installation art piece featuring floating geometric shapes. Painted in a modern light mode aesthetic with soft white ambient lighting. Accents of vibrant electric blue and violet. Expansive white space, minimalist and high definition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_gGBKrhhTbxJeMDv18a9TblkzhE9AhvC9vC8EWUNAoKrOghK8muCDB835vP0_cDSIOOfWKN7MqI_4w1ORJSFfOz2bx_1Qw4GBPHI2BTwiXhBgJxW4OWjvYJu4-vs0tiXVf997S9v5v3ia-fMd6g7t2zh7Q2P7hvvgVLEVEVQRP8LA6fxjV17fi8lhytJd8qeQwbdd_Ou_GhCk6hYlyNXvK7PyjAD83iUj1IQ2PhrfbbAhiKAKksQbEgMkX0GrkWhRz8fIQsR2PKi0"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-caption text-caption text-on-surface">8 Credits</span>
+</div>
+</div>
+<div class="p-4 flex justify-between items-center bg-surface-container-lowest">
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface truncate max-w-[150px]">Geometric Serenity</h4>
+<p class="font-caption text-caption text-on-surface-variant">Yesterday</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Grid Item 3 -->
+<div class="group relative rounded-lg overflow-hidden bg-surface shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] transition-all duration-300">
+<div class="aspect-[4/3] bg-surface-variant relative">
+<img alt="Alpine Landscape" class="w-full h-full object-cover" data-alt="A photorealistic AI generated landscape of majestic snow-capped mountains at dawn. The sky is a gradient of soft violet to bright electric blue. The scene is hyper-detailed, feeling like magic made simple, with a clean, expansive, breathless layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYLZx6QFvwcF-lC5CCslYJHNHZWdBOZMddas7CuUn-ANVwinofjRV7IuBfhs9b8EB0cP5r6yCtUmqitARFeFwzL3-dYvn7m6JB98i0MNdyMOiNOSkzkUUpITcIVNQ1t3W0SJDMCftbD07On88Sbmi2aOoGGCYKf62miBkamoV3A4yG9NfeIdWtKFw8IzJ2MhtYGQwqHtahLT-1wPm63T0Xdthi1eoGCXI8aRp0eIH7cx6-NIAm6ahb8qcxxOApciGVRcMgaYGn2MCm"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-caption text-caption text-on-surface">15 Credits</span>
+</div>
+</div>
+<div class="p-4 flex justify-between items-center bg-surface-container-lowest">
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface truncate max-w-[150px]">Alpine Dawn</h4>
+<p class="font-caption text-caption text-on-surface-variant">Oct 12, 2023</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-col items-center pb-safe bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-2xl border-t border-white/20 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] rounded-t-lg pt-4">
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary rounded-full px-8 py-3 flex items-center justify-center gap-2 w-[calc(100%-40px)] mx-margin-mobile mb-4 font-label-bold text-label-bold hover:brightness-110 active:scale-98 transition-all">
+<span class="material-symbols-outlined">auto_awesome</span>
+            Generate Now
+        </button>
+</nav>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/20 bg-surface-container-lowest dark:bg-surface-container-low mb-24 md:mb-0">
+<div class="font-display-xl text-headline-md text-on-surface mb-4 md:mb-0">SceneShot AI</div>
+<div class="flex flex-wrap justify-center gap-4 mb-4 md:mb-0">
+<a class="font-caption text-caption text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-caption text-caption text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-caption text-caption text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-colors" href="#">Contact Support</a>
+<a class="font-caption text-caption text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-colors" href="#">Affiliate Program</a>
+</div>
+<div class="font-caption text-caption text-on-surface-variant opacity-60">© 2024 SceneShot AI. Magic made simple.</div>
+</footer>
+</body></html>

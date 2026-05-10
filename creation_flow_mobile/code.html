@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SceneShot AI - Create</title>
+<script type='text/javascript' nonce='DSoppfazuKDlLiaaeMcheQ==' src='https://contribution.usercontent.google.com/E2QOh9ZG4ZmJUlA2T0Pp_o2kxDs0Y8gORWae-Go-mrJMrFEBsePc3SdQH_yLmpJKTA_4EeQ-f8PUQAXGTXaVV6VtClQanq7qnTqJSKwk3fBE_WlVygr9Spzk63wdGdRC8WTbJAfnV8z9Ze6cQWahSi2Z1QP8NpEr36FiROQ775xaoRZjDpfQnwDP4WCPmwdxCNLLbD060kQHk7PIv0SWdimsoNWeVfY7Q3K_XGqmUpocD7T52uLMo9EhRArTL4pAHHzeXF5NToR4xFkJPxduW1jrybApUdLNe7eBzbow7aAWIJBx2-rcXWKvUHyx5oIcstmqFNBSHxXmCxYefeMvlkUCgZclH7k8yLCnCMDpFtoEOco9CXOAALTF3Jn7ff0qVRbwjhinAmbWEzutHeVPODKyqERWHks5eERxYybCUKnkW5WsRr8sklwvwUdYixydQgS_6CPVtlPGfAmtKa-mSJ4lWqEci96LS1kJLkpSRomYsxbkJsvbXr1DlUyxA0Bz8wt0fJJIr3fikfHIdhqkmXcTpybqE__e97LgSAYLCiQi_dOyDEXwfVimWp8gxw2S0cp917x2rs9Gf1tHLqmTM5UNPcECOt5ZpkYM5QQuBON3KfChvQlecToq9OP3GC7EqWYpkt6HfCG9tN_ehpKpv5uZ2mf-qUfw6bxE_bCFN2KCBdPwn68TkuXS2kmG-lwidcg9n_c-vmLcMO9sKVpFRLzJIYmFbjLFtYXd-0Ls0Pxrfgs52BmKBQ9C2Wta2gnBH0nVy08YbIooUKsQSASNBAFmui542O5ueOAHbIqr'></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f3f4f5",
+                      "on-primary-container": "#efefff",
+                      "on-secondary-fixed-variant": "#6900b3",
+                      "secondary": "#841cd8",
+                      "on-surface": "#191c1d",
+                      "on-tertiary-container": "#f3f0ef",
+                      "tertiary-fixed": "#e5e2e1",
+                      "outline": "#747687",
+                      "surface-dim": "#d9dadb",
+                      "on-background": "#191c1d",
+                      "inverse-primary": "#b8c4ff",
+                      "background": "#f8f9fa",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-secondary-fixed": "#2c0050",
+                      "surface-container-high": "#e7e8e9",
+                      "tertiary-container": "#6e6d6d",
+                      "surface-variant": "#e1e3e4",
+                      "error": "#ba1a1a",
+                      "surface-container": "#edeeef",
+                      "primary-fixed-dim": "#b8c4ff",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "inverse-on-surface": "#f0f1f2",
+                      "primary": "#0041de",
+                      "primary-fixed": "#dde1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-bright": "#f8f9fa",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#565555",
+                      "inverse-surface": "#2e3132",
+                      "on-primary-fixed-variant": "#0036bc",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#fffbff",
+                      "primary-container": "#2d5cfe",
+                      "outline-variant": "#c4c5d9",
+                      "surface-container-highest": "#e1e3e4",
+                      "surface-tint": "#0f4aef",
+                      "on-primary-fixed": "#001355",
+                      "surface": "#f8f9fa",
+                      "secondary-fixed": "#f0dbff",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-surface-variant": "#434656",
+                      "secondary-container": "#9e42f2",
+                      "secondary-fixed-dim": "#ddb7ff",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "margin-desktop": "64px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-xl": [
+                              "Outfit"
+                      ],
+                      "headline-lg-mobile": [
+                              "Outfit"
+                      ],
+                      "label-bold": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "caption": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg": [
+                              "Outfit"
+                      ],
+                      "headline-md": [
+                              "Outfit"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen pb-[120px] md:pb-0">
+<!-- TopNavBar (Web Only, suppressed for focused mobile flow) -->
+<header class="hidden md:flex fixed top-0 left-0 w-full z-50 justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl border-b border-white/20 dark:border-outline-variant/10 shadow-sm">
+<div class="font-display-xl text-headline-md tracking-tighter bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">SceneShot AI</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Scenes</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Examples</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
+</nav>
+<div class="hidden md:flex items-center gap-4">
+<button class="font-label-bold text-label-bold text-on-surface-variant hover:opacity-80 transition-all duration-300">Sign In</button>
+<button class="font-label-bold text-label-bold bg-primary text-on-primary rounded-full px-6 py-2 hover:opacity-80 transition-all duration-300 scale-95 active:scale-90 transition-transform shadow-[0_4px_14px_0_rgba(0,65,222,0.39)]">Generate Now</button>
+</div>
+</header>
+<!-- Mobile Header (Contextual back button for focused flow) -->
+<div class="md:hidden flex items-center justify-between px-margin-mobile py-4 sticky top-0 bg-surface/90 backdrop-blur-xl z-40 border-b border-white/20">
+<button class="p-2 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md text-on-surface">Create</div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</div>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-[100px] flex flex-col gap-[80px]">
+<!-- Step 1 & 2: Upload and Scene Selection (Combined in view for flow context) -->
+<section class="flex flex-col gap-gutter max-w-2xl mx-auto w-full">
+<div class="text-center mb-4">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Transform your photo</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Upload a clear photo to begin the magic.</p>
+</div>
+<!-- Upload Area -->
+<div class="w-full aspect-[4/3] md:aspect-[16/9] rounded-xl border-2 border-dashed border-primary/30 bg-primary/5 hover:bg-primary/10 transition-colors flex flex-col items-center justify-center gap-4 cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-primary-container text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 32px;">cloud_upload</span>
+</div>
+<div class="text-center">
+<span class="font-label-bold text-label-bold text-primary block mb-1">Tap to Upload Photo</span>
+<span class="font-caption text-caption text-on-surface-variant">JPG, PNG up to 10MB</span>
+</div>
+</div>
+<!-- Privacy Notice -->
+<div class="flex items-start gap-3 p-4 rounded-lg bg-surface-container-low border border-white/40 shadow-[0_4px_20px_rgba(0,0,0,0.03)] mt-2">
+<span class="material-symbols-outlined text-outline mt-0.5">lock</span>
+<div>
+<h3 class="font-label-bold text-label-bold text-on-surface">Private &amp; Secure</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Photos are processed securely and deleted automatically after 24 hours. We never train AI on your personal images.</p>
+</div>
+</div>
+<!-- Scene Selection -->
+<div class="mt-8">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Choose a Scene</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Scene Card 1 (Selected) -->
+<div class="relative rounded-lg overflow-hidden aspect-square border-2 border-primary shadow-[0_10px_30px_rgba(0,65,222,0.15)] cursor-pointer">
+<img alt="Professional Studio Scene" class="w-full h-full object-cover" data-alt="A clean, minimalist modern office studio setting with soft, diffused natural light pouring through large windows. High-definition quality, professional corporate headshot environment. Crisp white walls, a subtle out-of-focus potted plant in the background. High key lighting, modern aesthetic, highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZq1dNQIKjyFrT-S8mQZWBg6NYf_oY8pBHVEZNg8YWZkRB8cPbwTn_XJGjIdCSCLs1a3-lmUyOQZP5lG-oV6gExAiIL4jmM2m_gR5IOXfg1vIvJkiy5opjl3jhhzNd2jd0FG51_u-ODUdpRCkskgg0VUlrRm7Io-SsxU0H3WzSS0jIgWOb-8znkdvRWEJ1rEEU3ln91MmIscHbQ2BPkohqdUAIYIpur0N_jHAwzI68tqKEumFteykRgosgEuLbFtpWhKtlkl31e7lF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-3">
+<span class="font-label-bold text-label-bold text-white">Pro Headshot</span>
+</div>
+<div class="absolute top-2 right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined" style="font-size: 16px;">check</span>
+</div>
+</div>
+<!-- Scene Card 2 -->
+<div class="relative rounded-lg overflow-hidden aspect-square border-2 border-transparent hover:border-outline-variant transition-colors cursor-pointer group">
+<img alt="Cyberpunk Neon Scene" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant cyberpunk city street at night, illuminated by bright neon pink and cyan signs. Wet pavement reflecting the colorful lights. Futuristic aesthetic, highly detailed, cinematic lighting, shallow depth of field, dramatic moody atmosphere. Energetic and trendy style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC6_TmAM-xrwoCIlRNiqGstGneV_pGBFAmQqi5m3zDBcUUQdkyKyqhrKTxxNHZxlPPLYZjaPnG41OP-DQeAWTos6mJlHRQnhIazoIyz0rQTt-YhpbQILLCmZC0B4Vh4kL_1jQBGaIhVb51MIqaYOn0H8zfRpZ0PQmIpc9wgXC2wGW-9jQ1zqruoRJs77oWdrVzlB90tUOtIVF_BI7GJ1FMyc7Nc3yfk8_bi-oDOZj49Olcan-Jbi8BEHMk2MeBnWAcsN_X-nUK9GZy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-3">
+<span class="font-label-bold text-label-bold text-white">Neon Cyber</span>
+</div>
+</div>
+<!-- Scene Card 3 -->
+<div class="relative rounded-lg overflow-hidden aspect-square border-2 border-transparent hover:border-outline-variant transition-colors cursor-pointer group">
+<img alt="Cozy Coffee Shop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A warm, inviting cozy coffee shop interior. Soft bokeh background with fairy lights and a blurred espresso machine. Warm sepia-toned lighting, comfortable and relaxed mood. High quality, photorealistic, lifestyle photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwCnMIXNNrGsPOx4YrxuNzrt5QAS5JH3DDZGTRbETZMmVduvg-6z69D3L6uPVzTVAlOCghJxJGFDoftk1hfbs6AhQN8Wj8aCq0ByXh5YkNX_G7K_q-CnNE1iLEzU-2SD5KRIS0sU9idUwfWZDYJpk9PQdfdAMYi_FjZd-Cvr4q7zMdhglqLBvt_rUcjRp-cTCby1OEeIGyGSxoPDq6qM_ZhCmjgmN175pCHvPfDz5QR3zx3K6bFDffhW9JPV5b7IqlkuqBfgEtfh21"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-3">
+<span class="font-label-bold text-label-bold text-white">Cozy Cafe</span>
+</div>
+</div>
+<!-- Scene Card 4 -->
+<div class="relative rounded-lg overflow-hidden aspect-square border-2 border-transparent hover:border-outline-variant transition-colors cursor-pointer bg-surface-container-high flex items-center justify-center">
+<div class="text-center text-outline">
+<span class="material-symbols-outlined block mb-1">explore</span>
+<span class="font-caption text-caption">More Scenes</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Settings Toggles -->
+<div class="mt-4 p-4 rounded-lg bg-surface-container-lowest border border-surface-variant shadow-[0_10px_30px_rgba(0,0,0,0.02)]">
+<div class="flex items-center justify-between py-2 border-b border-surface-variant last:border-0">
+<div>
+<div class="font-label-bold text-label-bold text-on-surface">Aspect Ratio</div>
+<div class="font-caption text-caption text-on-surface-variant">Best for social media</div>
+</div>
+<div class="flex bg-surface-container-high rounded-full p-1">
+<button class="px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm font-caption text-caption text-on-surface">1:1</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant font-caption text-caption">9:16</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant font-caption text-caption">16:9</button>
+</div>
+</div>
+<div class="flex items-center justify-between py-3">
+<div>
+<div class="font-label-bold text-label-bold text-on-surface">HD Quality</div>
+<div class="font-caption text-caption text-on-surface-variant">Takes slightly longer</div>
+</div>
+<!-- Toggle Switch -->
+<button class="w-12 h-6 rounded-full bg-primary relative transition-colors shadow-inner">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm transition-transform"></div>
+</button>
+</div>
+</div>
+<!-- Sticky Bottom CTA for Mobile Flow -->
+<div class="fixed md:static bottom-0 left-0 w-full p-margin-mobile md:p-0 bg-surface/90 md:bg-transparent backdrop-blur-xl md:backdrop-blur-none border-t border-white/20 md:border-none z-40 mt-8">
+<button class="w-full bg-gradient-to-r from-primary to-secondary text-white font-label-bold text-label-bold py-4 rounded-full shadow-[0_8px_25px_rgba(0,65,222,0.3)] hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">auto_awesome</span>
+                    Generate Scene
+                </button>
+</div>
+</section>
+<!-- Step 4: Loading State (Demonstration) -->
+<section class="max-w-md mx-auto w-full hidden">
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-white/50 shadow-[0_20px_50px_rgba(0,0,0,0.05)] text-center">
+<div class="relative w-24 h-24 mx-auto mb-6">
+<!-- Outer rotating ring -->
+<div class="absolute inset-0 rounded-full border-4 border-surface-variant border-t-primary animate-spin"></div>
+<!-- Inner glowing icon -->
+<div class="absolute inset-0 flex items-center justify-center text-primary animate-pulse">
+<span class="material-symbols-outlined" style="font-size: 32px;">magic_button</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Creating your scene...</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Applying Pro Headshot style to your photo.</p>
+<!-- Progress bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary w-2/3 rounded-full relative">
+<div class="absolute top-0 right-0 bottom-0 left-0 bg-[url(&#39;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=&#39;)] opacity-50"></div>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-2 text-right">65%</p>
+</div>
+</section>
+<!-- Step 5: Result View (Demonstration - usually on next screen, shown here for flow completion) -->
+<section class="max-w-3xl mx-auto w-full hidden">
+<div class="text-center mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+                    Scene Complete
+                </h2>
+</div>
+<!-- Before/After Slider Container -->
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/20 bg-surface-container">
+<!-- 'After' Image (Full width) -->
+<img alt="AI Generated Professional Headshot" class="absolute inset-0 w-full h-full object-cover" data-alt="A highly polished, professional AI-generated corporate headshot. A sharply dressed individual in a tailored suit against a clean, modern glass office background. Perfect high-key studio lighting, hyper-realistic details, crisp focus, premium business aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADdQ1OxMa3SwKTU-upnBU4U_LL6uLnoLqgpIb9qszi3YTdzbn_oXYuawMiSsp4oVTMgELvCBFmxapleDlTM-YKHZUMi3rq5Q1kUipXkYq-ixB9q7dybJSu5gxC8-ZW5fq_b60AYOMOkrUJsqCY7pYk3GZZutfdGMpB2-Y2Ngg_pNIKQXNvi99-tYnYtCOUyAAOPxxW5-zVNIy9Tps_BV_THtlTuExiEYiYIxRu7Q-ZecnnUEPlD5YLU00BdVTfYCz_NXF65Ax_pcDA"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/30 flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary" style="font-size: 16px;">auto_awesome</span>
+<span class="font-caption text-caption text-on-surface">AI Enhanced</span>
+</div>
+<!-- 'Before' Image (Clipped) -->
+<div class="absolute inset-0 w-1/2 overflow-hidden border-r-2 border-white">
+<img alt="Original Casual Photo" class="absolute inset-0 w-[200%] h-full object-cover max-w-none grayscale-[30%]" data-alt="A casual, unedited selfie taken in a poorly lit room. Flat lighting, slightly grainy, everyday clothing. The baseline original photo before any AI enhancement. Neutral background, standard smartphone camera quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP8Ybdog3iBFaxCWmp9RfFrjwrz1cDqgyAPSGEdkmhwMZrqINbOQ75ezM3JvU98kvU63Kq04tfuAiGbswC2ZNmqXvETdPejSTVjRt6ir_7vtPsWT7P_WdHJNOAd0U6p0nCgxxHOZM_I15108d8-Qxmlv0HHURgwoHH28UBLuAJyxgwX1xerEGR7pH-gynmJ7196O9l7xjiG131On6d3TDOSpqK9iXvCQr1U8vksSFDF1CRbUpbXZTY8CO-5Ko-3RTVkDkXq99tQ7Ow"/>
+<div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
+<span class="font-caption text-caption text-white">Original</span>
+</div>
+</div>
+<!-- Slider Handle -->
+<div class="absolute top-0 bottom-0 left-1/2 w-1 bg-white/50 backdrop-blur-sm -ml-0.5 cursor-ew-resize flex items-center justify-center">
+<div class="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">swap_horiz</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+<button class="px-6 py-3 rounded-full border-2 border-outline-variant text-on-surface font-label-bold text-label-bold hover:bg-surface-variant transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">restart_alt</span>
+                    Try Another Scene
+                </button>
+<button class="px-8 py-3 rounded-full bg-primary text-white font-label-bold text-label-bold hover:brightness-110 shadow-[0_8px_25px_rgba(0,65,222,0.3)] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">download</span>
+                    Download High-Res
+                </button>
+</div>
+</section>
+</main>
+</body></html>

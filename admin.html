@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>管理后台 - SceneShot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/shared.css"/>
+<script src="js/shared.js"></script>
+<script>tailwind.config = TAILWIND_CONFIG;</script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<main class="lg:ml-64 pt-[80px] pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Dashboard Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+<div>
+<h2 class="font-display-xl text-headline-lg-mobile md:text-headline-lg text-on-background reveal" data-i18n="admin.title">管理概览</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 reveal" data-i18n="admin.desc">SceneShot AI 的实时指标和系统健康状况。</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="outline-btn px-4 py-2 text-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-label-bold text-label-bold" data-i18n="admin.30days">最近 30 天</span>
+</button>
+<button class="cta-btn px-4 py-2 text-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="font-label-bold text-label-bold" data-i18n="admin.export">导出报告</span>
+</button>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<!-- Total Users -->
+<div class="premium-card p-6 relative overflow-hidden group reveal reveal-stagger-1">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">group</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold" data-i18n="admin.users">总用户数</p>
+<div class="mt-4 flex items-end gap-3">
+<span class="font-display-xl text-headline-lg text-on-background" data-count="124.5K">124.5K</span>
+<span class="flex items-center text-sm font-semibold text-green-700 bg-green-100 px-2 py-1 rounded-full mb-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> 12%
+</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-2" data-i18n="admin.vs30days">对比前 30 天</p>
+</div>
+<!-- Total Generations -->
+<div class="premium-card p-6 relative overflow-hidden group reveal reveal-stagger-2">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-secondary">image</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold" data-i18n="admin.generations">生成次数</p>
+<div class="mt-4 flex items-end gap-3">
+<span class="font-display-xl text-headline-lg text-on-background" data-count="1.2M">1.2M</span>
+<span class="flex items-center text-sm font-semibold text-green-700 bg-green-100 px-2 py-1 rounded-full mb-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> 8.4%
+</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-2" data-i18n="admin.vs30days">对比前 30 天</p>
+</div>
+<!-- Revenue -->
+<div class="premium-card p-6 relative overflow-hidden group reveal reveal-stagger-3">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">payments</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold" data-i18n="admin.revenue">收入 (MRR)</p>
+<div class="mt-4 flex items-end gap-3">
+<span class="font-display-xl text-headline-lg text-on-background" data-count="842K" data-count-prefix="¥">¥842K</span>
+<span class="flex items-center text-sm font-semibold text-green-700 bg-green-100 px-2 py-1 rounded-full mb-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> 15%
+</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-2" data-i18n="admin.vs30days">对比前 30 天</p>
+</div>
+<!-- System Health -->
+<div class="premium-card p-6 relative overflow-hidden group reveal reveal-stagger-4">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-error">warning</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold" data-i18n="admin.health">系统健康</p>
+<div class="mt-4 flex items-end gap-3">
+<span class="font-display-xl text-headline-lg text-on-background" data-count="98.2" data-count-suffix="%">98.2%</span>
+<span class="flex items-center text-sm font-semibold text-red-700 bg-red-100 px-2 py-1 rounded-full mb-1">
+<span class="material-symbols-outlined text-sm">trending_down</span> 0.5%
+</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-2" data-i18n="admin.successrate">成功率，最近 24 小时</p>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<!-- Primary Chart -->
+<div class="lg:col-span-2 premium-card p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-display-xl text-headline-md text-on-background" data-i18n="admin.chart.title">生成量 vs 收入</h3>
+<div class="flex gap-2">
+<span class="flex items-center gap-1 font-caption text-caption text-on-surface-variant"><div class="w-3 h-3 rounded-full bg-primary"></div> <span data-i18n="admin.chart.gen">生成量</span></span>
+<span class="flex items-center gap-1 font-caption text-caption text-on-surface-variant"><div class="w-3 h-3 rounded-full bg-secondary"></div> <span data-i18n="admin.chart.rev">收入</span></span>
+</div>
+</div>
+<div class="h-64 w-full rounded-xl bg-surface-container flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, #d8d2c8 20px), repeating-linear-gradient(90deg, transparent, transparent 19px, #d8d2c8 20px);"></div>
+<div class="absolute bottom-0 left-0 w-full h-full flex items-end px-4 gap-2">
+<div class="w-1/12 h-[30%] bg-primary/40 rounded-t-md relative"><div class="absolute bottom-0 left-0 w-full h-[40%] bg-secondary/60 rounded-t-md"></div></div>
+<div class="w-1/12 h-[45%] bg-primary/40 rounded-t-md relative"><div class="absolute bottom-0 left-0 w-full h-[50%] bg-secondary/60 rounded-t-md"></div></div>
+<div class="w-1/12 h-[35%] bg-primary/40 rounded-t-md relative"><div class="absolute bottom-0 left-0 w-full h-[40%] bg-secondary/60 rounded-t-md"></div></div>
+<div class="w-1/12 h-[60%] bg-primary/40 rounded-t-md relative"><div class="absolute bottom-0 left-0 w-full h-[70%] bg-secondary/60 rounded-t-md"></div></div>
+<div class="w-1/12 h-[50%] bg-primary/40 rounded-t-md relative"><div class="absolute bottom-0 left-0 w-full h-[55%] bg-secondary/60 rounded-t-md"></div></div>
+<div class="w-1/12 h-[80%] bg-primary/40 rounded-t-md relative"><div class="absolute bottom-0 left-0 w-full h-[85%] bg-secondary/60 rounded-t-md"></div></div>
+<div class="w-1/12 h-[70%] bg-primary/40 rounded-t-md relative"><div class="absolute bottom-0 left-0 w-full h-[75%] bg-secondary/60 rounded-t-md"></div></div>
+<div class="w-1/12 h-[95%] bg-primary/40 rounded-t-md relative"><div class="absolute bottom-0 left-0 w-full h-[90%] bg-secondary/60 rounded-t-md"></div></div>
+</div>
+</div>
+</div>
+<!-- Popular Scenes -->
+<div class="premium-card p-6">
+<h3 class="font-display-xl text-headline-md text-on-background mb-6" data-i18n="admin.popular">热门场景</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-blue-200 to-blue-400"></div>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Cyberpunk City</p>
+<p class="font-caption text-caption text-on-surface-variant">45K Uses</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-bold text-label-bold text-primary">32%</p>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full mt-1">
+<div class="w-[32%] h-full bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-green-200 to-green-400"></div>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Ethereal Forest</p>
+<p class="font-caption text-caption text-on-surface-variant">28K Uses</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-bold text-label-bold text-primary">20%</p>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full mt-1">
+<div class="w-[20%] h-full bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-purple-200 to-purple-400"></div>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Neon Studio</p>
+<p class="font-caption text-caption text-on-surface-variant">15K Uses</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-bold text-label-bold text-primary">11%</p>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full mt-1">
+<div class="w-[11%] h-full bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<a href="scenes.html" class="w-full mt-6 py-2 text-primary font-label-bold text-label-bold hover:bg-surface-container rounded-full transition-colors text-center block" data-i18n="admin.viewall">
+                查看所有场景
+            </a>
+</div>
+</div>
+<!-- Recent Generations Table -->
+<div class="premium-card overflow-hidden">
+<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+<h3 class="font-display-xl text-headline-md text-on-background" data-i18n="admin.recent">最近生成</h3>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="pl-10 pr-4 py-2 rounded-full border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:border-transparent outline-none font-body-md text-body-md w-64" data-i18n-placeholder="admin.search" placeholder="搜索 ID 或用户..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/20 font-caption text-caption text-on-surface-variant uppercase tracking-wider">
+<th class="p-4 font-semibold" data-i18n="admin.preview">预览</th>
+<th class="p-4 font-semibold" data-i18n="admin.id">ID</th>
+<th class="p-4 font-semibold" data-i18n="admin.user">用户</th>
+<th class="p-4 font-semibold" data-i18n="admin.scene">应用场景</th>
+<th class="p-4 font-semibold" data-i18n="admin.status">状态</th>
+<th class="p-4 font-semibold" data-i18n="admin.time">时间</th>
+<th class="p-4 font-semibold text-right" data-i18n="admin.actions">操作</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-indigo-200 to-purple-200"></div>
+</div>
+</td>
+<td class="p-4 font-mono text-sm text-on-surface-variant">#GEN-8492</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-primary text-xs font-bold">AJ</div>
+<span>Alex Johnson</span>
+</div>
+</td>
+<td class="p-4"><span class="px-2.5 py-1 bg-surface-container rounded-lg text-xs font-medium">Cyberpunk City</span></td>
+<td class="p-4">
+<span class="flex items-center gap-1 text-sm font-semibold text-green-700">
+<span class="w-2 h-2 rounded-full bg-green-500"></span> <span data-i18n="admin.success">成功</span>
+</span>
+</td>
+<td class="p-4 text-on-surface-variant text-sm">2 mins ago</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1"><span class="material-symbols-outlined text-xl">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-red-200 to-orange-200"></div>
+</div>
+</td>
+<td class="p-4 font-mono text-sm text-on-surface-variant">#GEN-8491</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-secondary text-xs font-bold">MK</div>
+<span>Maria Garcia</span>
+</div>
+</td>
+<td class="p-4"><span class="px-2.5 py-1 bg-surface-container rounded-lg text-xs font-medium">Golden Hour</span></td>
+<td class="p-4">
+<span class="flex items-center gap-1 text-sm font-semibold text-red-700">
+<span class="w-2 h-2 rounded-full bg-red-500"></span> <span data-i18n="admin.failed">失败</span>
+</span>
+</td>
+<td class="p-4 text-on-surface-variant text-sm">5 mins ago</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1"><span class="material-symbols-outlined text-xl">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="p-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-teal-200 to-emerald-200"></div>
+</div>
+</td>
+<td class="p-4 font-mono text-sm text-on-surface-variant">#GEN-8490</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-primary text-xs font-bold">TR</div>
+<span>Tom Richards</span>
+</div>
+</td>
+<td class="p-4"><span class="px-2.5 py-1 bg-surface-container rounded-lg text-xs font-medium">Ethereal Forest</span></td>
+<td class="p-4">
+<span class="flex items-center gap-1 text-sm font-semibold text-yellow-700">
+<span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span> <span data-i18n="admin.processing">处理中</span>
+</span>
+</td>
+<td class="p-4 text-on-surface-variant text-sm">Just now</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1"><span class="material-symbols-outlined text-xl">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-outline-variant/20 flex justify-between items-center text-sm text-on-surface-variant">
+<span data-i18n="admin.showing">显示第 1 到 3 条，共 1,204 条</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded border border-outline-variant hover:bg-surface-container disabled:opacity-50" data-i18n="admin.prev">上一页</button>
+<button class="px-3 py-1 rounded border border-outline-variant hover:bg-surface-container" data-i18n="admin.next">下一页</button>
+</div>
+</div>
+</div>
+</main>
+<script>
+renderNavbar('dashboard');
+renderSidebar('dashboard', [
+    {id:'dashboard', key:'sidebar.admin', icon:'dashboard', href:'admin.html'},
+    {id:'scenes', key:'nav.scenes', icon:'image', href:'scenes.html'},
+    {id:'pricing', key:'nav.pricing', icon:'payments', href:'pricing.html'},
+    {id:'faq', key:'nav.faq', icon:'quiz', href:'faq.html'}
+]);
+renderFooter();
+renderBottomBar();
+</script>
+</body>
+</html>

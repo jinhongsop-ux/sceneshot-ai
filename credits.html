@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>积分记录 - SceneShot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/shared.css"/>
+<script src="js/shared.js"></script>
+<script>tailwind.config = TAILWIND_CONFIG;</script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<main class="lg:ml-64 pt-[80px] pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header -->
+<div class="flex flex-col gap-2 mb-8">
+    <h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight" data-i18n="credits.title">权益与交易</h1>
+    <p class="font-body-md text-body-md text-on-surface-variant">查看您的权益余额和交易记录。</p>
+</div>
+
+<!-- Balance Card -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-low p-8 md:p-10 shadow-[0_20px_50px_rgba(35,31,27,0.04)] border border-outline-variant/20 flex flex-col md:flex-row items-center justify-between gap-6 mb-8 reveal">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left gap-4">
+        <div class="flex gap-8">
+            <div>
+                <span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">免费试用</span>
+                <div class="flex items-baseline gap-1 mt-1">
+                    <span id="ent-trials" class="font-display-xl text-display-xl text-on-surface text-gradient">0</span>
+                    <span class="font-body-lg text-body-lg text-on-surface-variant font-medium">次</span>
+                </div>
+            </div>
+            <div>
+                <span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">付费额度</span>
+                <div class="flex items-baseline gap-1 mt-1">
+                    <span id="ent-unlocks" class="font-display-xl text-display-xl text-primary">0</span>
+                    <span class="font-body-lg text-body-lg text-on-surface-variant font-medium">次</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+        <a href="pricing.html" class="outline-btn px-8 py-3 justify-center">查看定价</a>
+        <a href="pricing.html" class="cta-btn px-8 py-3 justify-center">购买额度</a>
+    </div>
+</div>
+
+<!-- Transactions Table -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0_20px_50px_rgba(35,31,27,0.04)] border border-outline-variant/20 overflow-hidden">
+    <div class="p-6 border-b border-outline-variant/20">
+        <h2 class="font-headline-md text-headline-md text-on-surface" data-i18n="credits.recent">最近交易</h2>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-surface-container-low text-on-surface-variant font-label-bold text-label-bold uppercase tracking-wider text-[11px]">
+                    <th class="p-4 pl-6 whitespace-nowrap">时间</th>
+                    <th class="p-4 whitespace-nowrap">描述</th>
+                    <th class="p-4 text-right whitespace-nowrap">数量</th>
+                    <th class="p-4 pr-6 text-right whitespace-nowrap">类型</th>
+                </tr>
+            </thead>
+            <tbody id="tx-body" class="font-body-md text-body-md divide-y divide-outline-variant/20">
+                <tr><td colspan="4" class="p-4 text-center text-on-surface-variant">加载中...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</main>
+<script>
+renderNavbar('dashboard');
+renderSidebar('credits', [
+    {id:'creations', key:'sidebar.creations', icon:'image', href:'dashboard.html'},
+    {id:'credits', key:'sidebar.credits', icon:'payments', href:'credits.html'},
+    {id:'pricing', key:'nav.pricing', icon:'shopping_bag', href:'pricing.html'},
+    {id:'settings', key:'sidebar.settings', icon:'settings', href:'#'}
+]);
+renderFooter();
+renderBottomBar();
+
+async function loadCredits() {
+    if (!AuthState.isLoggedIn) {
+        await initAuth();
+    }
+    if (!AuthState.isLoggedIn) {
+        window.location.href = 'create.html';
+        return;
+    }
+
+    try {
+        // Load entitlements
+        const entResp = await apiCall('GET', '/api/entitlements');
+        if (entResp.entitlements) {
+            document.getElementById('ent-trials').textContent = entResp.entitlements.free_trials_remaining || 0;
+            document.getElementById('ent-unlocks').textContent = entResp.entitlements.paid_unlocks_remaining || 0;
+        }
+
+        // Load transactions
+        const txResp = await apiCall('GET', '/api/transactions');
+        const txns = txResp.transactions || [];
+        const body = document.getElementById('tx-body');
+
+        if (txns.length === 0) {
+            body.innerHTML = '<tr><td colspan="4" class="p-8 text-center text-on-surface-variant">暂无交易记录</td></tr>';
+            return;
+        }
+
+        body.innerHTML = txns.map(t => {
+            const isPositive = t.amount > 0;
+            const icon = isPositive ? (t.type === 'signup_reward' ? 'redeem' : 'payments') : 'auto_awesome';
+            const iconBg = isPositive ? 'bg-primary-container' : 'bg-error-container/30';
+            const iconColor = isPositive ? 'text-primary' : 'text-error';
+            return `
+                <tr class="hover:bg-surface-container-lowest/50 transition-colors">
+                    <td class="p-4 pl-6 text-on-surface-variant whitespace-nowrap">${new Date(t.created_at).toLocaleDateString('zh-CN')}</td>
+                    <td class="p-4 text-on-surface font-medium flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full ${iconBg} flex items-center justify-center ${iconColor}">
+                            <span class="material-symbols-outlined text-[16px]">${icon}</span>
+                        </div>
+                        ${t.description}
+                    </td>
+                    <td class="p-4 text-right font-medium ${isPositive ? 'text-primary' : 'text-error'} whitespace-nowrap">${isPositive ? '+' : ''}${t.amount}</td>
+                    <td class="p-4 pr-6 text-right text-on-surface-variant whitespace-nowrap">${t.type}</td>
+                </tr>
+            `;
+        }).join('');
+
+    } catch (e) {
+        console.error('Failed to load credits:', e);
+    }
+}
+
+loadCredits();
+</script>
+</body>
+</html>

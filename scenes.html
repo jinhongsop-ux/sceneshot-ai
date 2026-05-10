@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>场景库 - SceneShot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/shared.css"/>
+<script src="js/shared.js"></script>
+<script>tailwind.config = TAILWIND_CONFIG;</script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<main class="pt-[100px] md:pt-[120px] pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header -->
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 reveal" data-i18n="scenes.title">选择你的场景</h1>
+<p class="text-on-surface-variant font-body-md text-body-md reveal" data-i18n="scenes.desc">浏览我们的 AI 生成场景集，找到完美的背景。</p>
+</div>
+<!-- Filter Chips -->
+<div class="filter-chip-group flex gap-3 mb-8 overflow-x-auto pb-2">
+<button class="filter-chip active" data-i18n="scenes.filter.all">全部场景</button>
+<button class="filter-chip" data-i18n="scenes.filter.sports">运动</button>
+<button class="filter-chip" data-i18n="scenes.filter.professional">专业</button>
+<button class="filter-chip" data-i18n="scenes.filter.fantasy">奇幻</button>
+<button class="filter-chip" data-i18n="scenes.filter.casual">休闲</button>
+<button class="filter-chip" data-i18n="scenes.filter.scifi">科幻</button>
+</div>
+<!-- Scene Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+<!-- Baseball Star -->
+<a href="scene-detail.html" class="group block">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="Baseball Star" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQliwK_uhW4xK9vMWR5sXYbW_6BNlxn73-ewnqDy3taAbzchfTqPhIpmG-dLzf3WIeDfcIO601Uajh4NyqAtC1LzX5IOrKXQL4L1Zy9w4ub_qPjhJAEVvxh6V13aNYaaTOzLRazfLjQtFIFqWieFUOjUa4xFya4FZB1UaZDjfeI0bEk47u-Gv-P9FoT9m9BhhZS7Esu6GDhr4-Fed9V0tB9imYcHRgykLdus4qKan9who9BxvfXKWx5Wg79miyfqQ-FDJfc13s4j5P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-[18px]">Baseball Star</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 5 Credits
+</span>
+</div>
+<div class="absolute top-3 left-3 bg-primary text-on-primary px-2.5 py-1 rounded-full font-caption text-caption font-semibold" data-i18n="scenes.popular">热门</div>
+<div class="absolute top-3 right-3 bg-secondary text-on-secondary px-2.5 py-1 rounded-full font-caption text-caption font-semibold" data-i18n="scenes.flagship">旗舰</div>
+</div>
+</a>
+<!-- CEO Studio -->
+<a href="scene-detail.html" class="group block">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="CEO Studio" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR6FH3VXD4wXhYlJWuT_yl3RjBYu5tO04ePeSi_m4jYlXhj9EH6l5WrluLBOsGIlOOE_J0NvkQiw1CZR7SIP6zUGtSQ2JfGh6AsglodPhMkkqpPh2DqerLbt2Jx6Y46J8UKUvJhPIaxoLg6hvZCBB58cJmY_0x6NGcGViG892R5SW6WxSxe2IIx6FwAytTgeklIMrumKFiBUZx81_YRhMKjL4Ps-Kl6gC6KFq2cmL5znkRRTWN61xSElaHYYfqBQfSJLQdsgvxK8ut"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-[18px]">CEO Studio</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 8 Credits
+</span>
+</div>
+</div>
+</a>
+<!-- Mystic Woods -->
+<a href="scene-detail.html" class="group block">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="Mystic Woods" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBien5W-wefKsYYDu6Sm9K361TQPRzylb7HNLiPm7V490uqhnxXU4pXXziFx8dbXT0-4u6n3qvt2w9rzmu3VegtJWDTPuXBIz7CqqADMT1y0WVoj3jkl236nqER2FG8gPj2pcSNblU_XgZBF4OfOio1YzILxcS9Ii7KOrH25wqedw_PvbwyKILz3XCJJK8oxVGesiW7ihJta9k6ygSVCFTCXszTQWZtEPDm5u9lHVhPZudNMUoBoiA2gRe0WONaGtboAXux4Dly6f3P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-[18px]">Mystic Woods</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 6 Credits
+</span>
+</div>
+</div>
+</a>
+<!-- Neon Drift -->
+<a href="scene-detail.html" class="group block">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="Neon Drift" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoyc8vV0lwvxsujwbtNiH7mo8ftYPh0MGFGcBdxssmE0vbAmJl6PeLpGnRBDOLu6mb5YSkkQfdKD4M_fkVabLDPK_zu01q4hv8XcBMIhgwXIPK7or7IvCHJv_JsARdJE6KsKfotM4IX4ksjbF-zeJDwMaBKv1f6JNngYy_QTWKmX3Hpkw1fvkPVD-Pvzv34-Q3hpR8Ha3Ce0DremQHSJWCdRYcX155O5tpzgEvZbrQq5MFqwvHc6h1BujunSF5o5AN_drU4i-Wr-PS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-[18px]">Neon Drift</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 7 Credits
+</span>
+</div>
+<div class="absolute top-3 right-3 bg-green-600/90 text-white px-2.5 py-1 rounded-full font-caption text-caption font-semibold" data-i18n="scenes.new">新品</div>
+</div>
+</a>
+<!-- Morning Coffee -->
+<a href="scene-detail.html" class="group block">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="Morning Coffee" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uh12Us1VznnT-FmDwuP50r0hoezusFcJ-DYObUnBS1K0_k6UH_f_3XPYeQh-Uugm2uUsFlRqeIGf2hJbNrq_AkA3rAUhOpLgKfpF2urggJzIP-sjLH3WcLXoK7_Ojwqt_W4v6gT-kkBHUgcMMv1CI7-zvGcxAYUx1ymkRinFWuDKL9gmC1u3uocOZTQdW1-qccKUmvrpqtqTRm2FwPIYAjOxpfXX8fi8c-FfhG4RHvdOYG1DyfMqss0e4hzk_PqGROGdXERPaioiuk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-[18px]">Morning Coffee</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 4 Credits
+</span>
+</div>
+</div>
+</a>
+<!-- Power Lift -->
+<a href="scene-detail.html" class="group block">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="Power Lift" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uieCYhdCpy2l_vgHYiMbC6NWJxtO9Pfec-bo-8x28Cf2hiB5wE3LPtRleV1XvHcqHuwxDnn1CTHa69lIThNpWUMDUPCvS2c76LoaSxVTgsxB-oT30MgjYvJzwvDFZRKW3uZ6W-5KsUjH9MrJQv43iTabptUaNSf5FmfjpnyqrjOmx6hi7Gw9VGT2ckIcVrYCPxQNZ6E-fnov729bGxLlfIPLXf68787X0r4cw9aZ-006Tr9YPYn45czFtw1ZDR6lqmrUKsYlpNhK0I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-[18px]">Power Lift</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 5 Credits
+</span>
+</div>
+</div>
+</a>
+</div>
+</main>
+<script>
+renderNavbar('scenes');
+renderFooter();
+renderBottomBar();
+
+// Load scenes from API
+async function loadScenesGrid() {
+    try {
+        const resp = await apiCall('GET', '/api/scenes');
+        const scenes = resp.scenes || [];
+        if (!scenes.length) return;
+
+        const gradients = {
+            'korean-baseball-broadcast': 'from-blue-400 to-blue-600',
+            'executive-office': 'from-amber-600 to-amber-800',
+            'cyberpunk-city': 'from-purple-500 to-indigo-700',
+            'mountain-summit': 'from-orange-400 to-rose-500',
+            'morning-coffee': 'from-amber-500 to-amber-700',
+            'power-lift': 'from-red-500 to-red-700',
+        };
+
+        const grid = document.querySelector('.grid');
+        grid.innerHTML = scenes.map(s => `
+            <a href="scene-detail.html?slug=${s.slug}" class="group block">
+                <div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-full h-48 md:h-64 bg-gradient-to-br ${gradients[s.slug] || 'from-gray-400 to-gray-600'} flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="text-white/60 font-display-xl">${s.name_zh || s.name}</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+                        <span class="text-white font-headline-md text-[18px]">${s.name_zh || s.name}</span>
+                        <span class="text-white/80 font-caption text-caption flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span>
+                            1 次解锁
+                        </span>
+                    </div>
+                    ${s.is_featured ? '<div class="absolute top-3 left-3 bg-primary text-on-primary px-2.5 py-1 rounded-full font-caption text-caption font-semibold">热门</div>' : ''}
+                </div>
+            </a>
+        `).join('');
+    } catch (e) {
+        console.error('Failed to load scenes:', e);
+    }
+}
+loadScenesGrid();
+</script>
+</body>
+</html>

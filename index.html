@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SceneShot AI - 秒级生成你的病毒式AI体育场照片</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/shared.css"/>
+<script src="js/shared.js"></script>
+<script>tailwind.config = TAILWIND_CONFIG;</script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<main class="pt-[80px] md:pt-[100px] pb-32">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center mb-24 md:mb-32">
+<div class="badge mb-8 reveal">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span data-i18n="index.badge">AI 生成效果</span>
+</div>
+<h1 class="font-display-xl text-display-xl md:text-[72px] md:leading-[80px] text-on-background mb-6 max-w-4xl reveal" data-i18n="index.hero.title">
+    秒级生成你的病毒式 AI 体育场照片
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10 reveal" data-i18n="index.hero.desc">
+    上传一张照片，即可将其转化为逼真的韩国棒球直播风格场景、旅行快照或电影级街拍。
+</p>
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto reveal">
+<a href="create.html" class="w-full sm:w-auto cta-btn text-lg px-8 py-4 justify-center">
+    <span data-i18n="index.hero.cta">生成我的照片</span>
+    <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption opacity-70 mt-2 sm:mt-0">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+    <span data-i18n="index.hero.private">私密上传</span>
+</div>
+</div>
+<!-- Before/After Module -->
+<div class="comparison-slider w-full max-w-5xl mt-16 md:mt-20 relative overflow-hidden shadow-[0_30px_80px_rgba(35,31,27,0.08)] bg-surface-container-lowest border border-outline-variant/20 group h-[320px] md:h-[560px] reveal-scale">
+<!-- Before -->
+<div class="before-wrapper">
+<img alt="Original photo" class="before-img w-full h-full object-cover grayscale-[20%] opacity-95" src="https://lh3.googleusercontent.com/aida/ADBb0uh12Us1VznnT-FmDwuP50r0hoezusFcJ-DYObUnBS1K0_k6UH_f_3XPYeQh-Uugm2uUsFlRqeIGf2hJbNrq_AkA3rAUhOpLgKfpF2urggJzIP-sjLH3WcLXoK7_Ojwqt_W4v6gT-kkBHUgcMMv1CI7-zvGcxAYUx1ymkRinFWuDKL9gmC1u3uocOZTQdW1-qccKUmvrpqtqTRm2FwPIYAjOxpfXX8fi8c-FfhG4RHvdOYG1DyfMqss0e4hzk_PqGROGdXERPaioiuk"/>
+<div class="absolute top-6 left-6 px-4 py-2 bg-surface/80 backdrop-blur-md rounded-full font-label-bold text-label-bold text-on-surface shadow-sm border border-outline-variant/20" data-i18n="index.before">原图</div>
+</div>
+<!-- After -->
+<img alt="AI Enhanced Korean baseball scene" class="after-img w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uieCYhdCpy2l_vgHYiMbC6NWJxtO9Pfec-bo-8x28Cf2hiB5wE3LPtRleV1XvHcqHuwxDnn1CTHa69lIThNpWUMDUPCvS2c76LoaSxVTgsxB-oT30MgjYvJzwvDFZRKW3uZ6W-5KsUjH9MrJQv43iTabptUaNSf5FmfjpnyqrjOmx6hi7Gw9VGT2ckIcVrYCPxQNZ6E-fnov729bGxLlfIPLXf68787X0r4cw9aZ-006Tr9YPYn45czFtw1ZDR6lqmrUKsYlpNhK0I"/>
+<div class="absolute top-6 right-6 px-4 py-2 bg-primary/90 backdrop-blur-md rounded-full font-label-bold text-label-bold text-on-primary shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+    <span data-i18n="index.after">AI 增强</span>
+</div>
+<!-- Slider Handle -->
+<div class="slider-handle">
+<div class="handle-circle">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3-Step Process -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 md:mb-32">
+<h2 class="font-headline-lg text-headline-lg text-center mb-4" data-i18n="index.steps.title">三步搞定</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg text-center mb-12 max-w-2xl mx-auto" data-i18n="index.steps.desc">30 秒内将普通照片变为非凡的 AI 生成场景。</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+<!-- Step 1 -->
+<div class="premium-card p-8 text-center reveal reveal-stagger-1">
+<div class="w-14 h-14 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">cloud_upload</span>
+</div>
+<div class="font-label-bold text-label-bold text-primary mb-2" data-i18n="index.step1.label">第一步</div>
+<h3 class="font-headline-md text-headline-md mb-3" data-i18n="index.step1.title">上传自拍</h3>
+<p class="text-on-surface-variant font-body-md text-body-md" data-i18n="index.step1.desc">拍摄或上传一张清晰的肖像照片。我们的 AI 在光线充足时效果最佳。</p>
+</div>
+<!-- Step 2 -->
+<div class="premium-card p-8 text-center reveal reveal-stagger-2">
+<div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-secondary text-[28px]" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+</div>
+<div class="font-label-bold text-label-bold text-secondary mb-2" data-i18n="index.step2.label">第二步</div>
+<h3 class="font-headline-md text-headline-md mb-3" data-i18n="index.step2.title">选择场景</h3>
+<p class="text-on-surface-variant font-body-md text-body-md" data-i18n="index.step2.desc">浏览我们精美的 AI 生成场景库，选择你喜欢的。</p>
+</div>
+<!-- Step 3 -->
+<div class="premium-card p-8 text-center reveal reveal-stagger-3">
+<div class="w-14 h-14 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="font-label-bold text-label-bold text-primary mb-2" data-i18n="index.step3.label">第三步</div>
+<h3 class="font-headline-md text-headline-md mb-3" data-i18n="index.step3.title">生成魔法</h3>
+<p class="text-on-surface-variant font-body-md text-body-md" data-i18n="index.step3.desc">我们的 AI 在几秒内将你的肖像无缝融入所选场景。</p>
+</div>
+</div>
+</section>
+<!-- Trending Scenes -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 md:mb-32">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg" data-i18n="index.trending.title">热门场景</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mt-1" data-i18n="index.trending.desc">本周最受欢迎的场景</p>
+</div>
+<a href="scenes.html" class="text-primary font-label-bold text-label-bold flex items-center gap-1 hover:gap-2 transition-all"><span data-i18n="index.trending.viewall">查看全部</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<!-- Scene Card 1 -->
+<a href="scene-detail.html" class="group block reveal reveal-stagger-1">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="Stadium Tour" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQliwK_uhW4xK9vMWR5sXYbW_6BNlxn73-ewnqDy3taAbzchfTqPhIpmG-dLzf3WIeDfcIO601Uajh4NyqAtC1LzX5IOrKXQL4L1Zy9w4ub_qPjhJAEVvxh6V13aNYaaTOzLRazfLjQtFIFqWieFUOjUa4xFya4FZB1UaZDjfeI0bEk47u-Gv-P9FoT9m9BhhZS7Esu6GDhr4-Fed9V0tB9imYcHRgykLdus4qKan9who9BxvfXKWx5Wg79miyfqQ-FDJfc13s4j5P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-headline-md">Stadium Tour</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 5 Credits
+</span>
+</div>
+<div class="absolute top-3 right-3 bg-primary text-on-primary px-2.5 py-1 rounded-full font-caption text-caption font-semibold">Trending</div>
+</div>
+</a>
+<!-- Scene Card 2 -->
+<a href="scene-detail.html" class="group block reveal reveal-stagger-2">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="VIP Access" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR6FH3VXD4wXhYlJWuT_yl3RjBYu5tO04ePeSi_m4jYlXhj9EH6l5WrluLBOsGIlOOE_J0NvkQiw1CZR7SIP6zUGtSQ2JfGh6AsglodPhMkkqpPh2DqerLbt2Jx6Y46J8UKUvJhPIaxoLg6hvZCBB58cJmY_0x6NGcGViG892R5SW6WxSxe2IIx6FwAytTgeklIMrumKFiBUZx81_YRhMKjL4Ps-Kl6gC6KFq2cmL5znkRRTWN61xSElaHYYfqBQfSJLQdsgvxK8ut"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-headline-md">VIP Access</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 8 Credits
+</span>
+</div>
+</div>
+</a>
+<!-- Scene Card 3 -->
+<a href="scene-detail.html" class="group block reveal reveal-stagger-3">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="Summer Fest" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBien5W-wefKsYYDu6Sm9K361TQPRzylb7HNLiPm7V490uqhnxXU4pXXziFx8dbXT0-4u6n3qvt2w9rzmu3VegtJWDTPuXBIz7CqqADMT1y0WVoj3jkl236nqER2FG8gPj2pcSNblU_XgZBF4OfOio1YzILxcS9Ii7KOrH25wqedw_PvbwyKILz3XCJJK8oxVGesiW7ihJta9k6ygSVCFTCXszTQWZtEPDm5u9lHVhPZudNMUoBoiA2gRe0WONaGtboAXux4Dly6f3P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-headline-md">Summer Fest</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 6 Credits
+</span>
+</div>
+</div>
+</a>
+<!-- Scene Card 4 -->
+<a href="scene-detail.html" class="group block reveal reveal-stagger-4">
+<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
+<img alt="Premiere Night" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoyc8vV0lwvxsujwbtNiH7mo8ftYPh0MGFGcBdxssmE0vbAmJl6PeLpGnRBDOLu6mb5YSkkQfdKD4M_fkVabLDPK_zu01q4hv8XcBMIhgwXIPK7or7IvCHJv_JsARdJE6KsKfotM4IX4ksjbF-zeJDwMaBKv1f6JNngYy_QTWKmX3Hpkw1fvkPVD-Pvzv34-Q3hpR8Ha3Ce0DremQHSJWCdRYcX155O5tpzgEvZbrQq5MFqwvHc6h1BujunSF5o5AN_drU4i-Wr-PS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
+<span class="text-white font-headline-md text-headline-md">Premiere Night</span>
+<span class="text-white/80 font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 10 Credits
+</span>
+</div>
+</div>
+</a>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 md:mb-32">
+<div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-center reveal">
+<div class="flex flex-col items-center">
+<span class="font-display-xl text-headline-lg text-on-background">10K+</span>
+<span class="font-body-md text-body-md text-on-surface-variant">活跃用户</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center">
+<span class="font-display-xl text-headline-lg text-on-background">50K+</span>
+<span class="font-body-md text-body-md text-on-surface-variant">照片已生成</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center">
+<span class="font-display-xl text-headline-lg text-on-background">4.9</span>
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<div class="bg-surface-container-high rounded-3xl p-12 md:p-20 relative overflow-hidden reveal">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-[0.06] pointer-events-none"></div>
+<div class="absolute -bottom-16 -left-16 w-48 h-48 bg-secondary rounded-full blur-[80px] opacity-[0.06] pointer-events-none"></div>
+<h2 class="font-display-xl text-headline-lg-mobile md:text-display-xl mb-4 text-on-surface" data-i18n="index.cta.title">准备好创造魔法了吗？</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto" data-i18n="index.cta.desc">加入数千用户的行列，开始用 20 个免费积分创作令人惊叹的 AI 照片。</p>
+<a href="create.html" class="cta-btn text-lg px-8 py-4 inline-flex">
+    <span data-i18n="index.cta.btn">免费开始</span>
+    <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<script>
+renderNavbar('home');
+renderFooter();
+renderBottomBar();
+</script>
+</body>
+</html>

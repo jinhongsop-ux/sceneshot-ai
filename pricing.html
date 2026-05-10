@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>定价与积分 - SceneShot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/shared.css"/>
+<script src="js/shared.js"></script>
+<script>tailwind.config = TAILWIND_CONFIG;</script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<main class="pt-[100px] md:pt-[120px] pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col gap-20">
+<!-- Header -->
+<section class="text-center max-w-3xl mx-auto flex flex-col gap-4">
+    <h1 class="font-display-xl text-display-xl md:text-[72px] md:leading-[80px] tracking-tighter text-on-surface reveal">解锁高清无水印</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant reveal">选择适合你的套餐，解锁高清无水印 AI 场景写真。</p>
+</section>
+
+<!-- Pricing Cards (loaded from API) -->
+<section id="pricing-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+    <div class="col-span-full text-center py-8 text-on-surface-variant">加载中...</div>
+</section>
+
+<!-- What you get -->
+<section class="max-w-3xl mx-auto w-full">
+    <div class="premium-card p-8">
+        <h3 class="font-headline-md text-headline-md mb-6">你将获得</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                    <p class="font-label-bold text-label-bold text-on-surface">高清无水印图片</p>
+                    <p class="text-sm text-on-surface-variant">可直接用于社交媒体和打印</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                    <p class="font-label-bold text-label-bold text-on-surface">多种场景选择</p>
+                    <p class="text-sm text-on-surface-variant">棒球直播、办公室、赛博朋克等</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                    <p class="font-label-bold text-label-bold text-on-surface">额度永不过期</p>
+                    <p class="text-sm text-on-surface-variant">购买后随时可用</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                    <p class="font-label-bold text-label-bold text-on-surface">多张更划算</p>
+                    <p class="text-sm text-on-surface-variant">单张低至 ¥0.8</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="max-w-4xl mx-auto w-full flex flex-col gap-10 mt-12">
+    <div class="text-center">
+        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4" data-i18n="pricing.faq.title">常见问题</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="pricing.faq.desc">关于积分和计费你需要了解的一切。</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="premium-card p-6 flex flex-col gap-3">
+            <h4 class="font-headline-md text-[20px] leading-[28px] text-on-surface flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">toll</span>
+                <span>免费试用是什么？</span>
+            </h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">注册后可获得 1 次免费试用，生成一张带水印的低清预览图。满意效果后再购买套餐解锁高清版本。</p>
+        </div>
+        <div class="premium-card p-6 flex flex-col gap-3">
+            <h4 class="font-headline-md text-[20px] leading-[28px] text-on-surface flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">event_busy</span>
+                <span>额度会过期吗？</span>
+            </h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">不会，购买的解锁额度永不过期。它们会保留在您的账户中，直到您使用为止。</p>
+        </div>
+        <div class="premium-card p-6 flex flex-col gap-3">
+            <h4 class="font-headline-md text-[20px] leading-[28px] text-on-surface flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">shield_lock</span>
+                <span>我的照片安全吗？</span>
+            </h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">您的照片仅用于生成场景，处理完成后安全删除。我们不会将您的照片用于训练 AI 模型。</p>
+        </div>
+        <div class="premium-card p-6 flex flex-col gap-3">
+            <h4 class="font-headline-md text-[20px] leading-[28px] text-on-surface flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">currency_exchange</span>
+                <span>可以退款吗？</span>
+            </h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">未使用的额度支持 14 天退款保证。联系客服即可处理。</p>
+        </div>
+    </div>
+</section>
+</main>
+<script>
+renderNavbar('pricing');
+renderFooter();
+renderBottomBar();
+
+// Load packages from API
+async function loadPackages() {
+    try {
+        const resp = await apiCall('GET', '/api/pricing-packages');
+        const packages = resp.packages || [];
+        const grid = document.getElementById('pricing-grid');
+
+        const icons = ['single', 'triple', 'standard', 'creator'];
+        const descriptions = [
+            '只想试一张',
+            '多试几个场景',
+            '日常使用',
+            '小红书/抖音内容创作者',
+        ];
+
+        grid.innerHTML = packages.map((pkg, i) => {
+            const isFeatured = pkg.is_featured;
+            const cardClass = isFeatured
+                ? 'bg-surface-container-lowest rounded-2xl p-8 flex flex-col gap-6 shadow-[0_24px_60px_rgba(35,31,27,0.08)] border border-primary relative overflow-hidden transform md:-translate-y-4 hover:-translate-y-6 transition-all duration-300 z-10 group reveal reveal-stagger-' + (i+1)
+                : 'premium-card p-8 flex flex-col gap-6 relative overflow-hidden group reveal reveal-stagger-' + (i+1);
+            const btnClass = isFeatured ? 'cta-btn' : 'outline-btn';
+
+            return `
+                <div class="${cardClass}" data-pkg-id="${pkg.id}">
+                    ${isFeatured ? '<div class="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-on-primary font-caption text-caption uppercase tracking-wider py-1.5 px-4 rounded-b-lg shadow-sm z-20">推荐</div>' : ''}
+                    <div class="flex flex-col gap-2 relative z-10 ${isFeatured ? 'mt-4' : ''}">
+                        <h3 class="font-headline-md text-headline-md ${isFeatured ? 'text-primary' : 'text-on-surface'}">${pkg.name}</h3>
+                        <div class="flex items-baseline gap-1">
+                            <span class="font-display-xl text-[48px] leading-[56px] font-bold text-on-surface">¥${pkg.amount_cny}</span>
+                        </div>
+                    </div>
+                    <div class="flex-grow flex flex-col justify-center py-6 border-y ${isFeatured ? 'border-primary/20' : 'border-outline-variant/20'} relative z-10">
+                        <div class="flex items-center gap-3 justify-center">
+                            <span class="material-symbols-outlined ${isFeatured ? 'text-secondary text-[40px]' : 'text-primary text-[32px]'} fill">auto_awesome</span>
+                            <span class="font-headline-lg-mobile text-headline-lg-mobile ${isFeatured ? 'text-secondary' : 'text-primary'}">${pkg.unlock_count}</span>
+                            <span class="font-body-md text-body-md text-on-surface-variant">次解锁</span>
+                        </div>
+                        <p class="text-center font-caption text-caption text-on-surface-variant mt-2">${descriptions[i] || pkg.description}</p>
+                    </div>
+                    <button class="w-full py-4 rounded-full ${btnClass} justify-center relative z-10 pricing-buy-btn" data-pkg-id="${pkg.id}" data-pkg-name="${pkg.name}" data-pkg-price="${pkg.amount_cny}">
+                        立即购买
+                    </button>
+                </div>
+            `;
+        }).join('');
+
+        // Attach buy handlers
+        grid.querySelectorAll('.pricing-buy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!AuthState.isLoggedIn) {
+                    AuthState.pendingAction = () => handlePricingBuy(btn.dataset.pkgId, btn.dataset.pkgName, btn.dataset.pkgPrice);
+                    renderAuthModal('register');
+                    return;
+                }
+                handlePricingBuy(btn.dataset.pkgId, btn.dataset.pkgName, btn.dataset.pkgPrice);
+            });
+        });
+
+    } catch (e) {
+        console.error('Failed to load packages:', e);
+    }
+}
+
+async function handlePricingBuy(pkgId, pkgName, pkgPrice) {
+    if (!AuthState.isLoggedIn) {
+        renderAuthModal('register');
+        return;
+    }
+
+    // Mock payment flow
+    const overlay = document.createElement('div');
+    overlay.id = 'payment-modal-overlay';
+    overlay.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm';
+    overlay.innerHTML = `
+        <div class="bg-surface rounded-3xl shadow-2xl p-8 w-full max-w-sm mx-4 text-center animate-in">
+            <div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mx-auto mb-4">
+                <span class="material-symbols-outlined text-primary text-[32px]">payment</span>
+            </div>
+            <h3 class="font-display-xl text-headline-md text-on-surface mb-2">确认支付</h3>
+            <p class="text-on-surface-variant mb-1">${pkgName}</p>
+            <p class="font-display-xl text-headline-lg text-primary mb-6">¥${pkgPrice}</p>
+            <p class="text-caption text-on-surface-variant mb-6">这是 MVP 模拟支付，不会产生真实扣款</p>
+            <div class="flex gap-3">
+                <button onclick="this.closest('#payment-modal-overlay').remove()" class="outline-btn flex-1 justify-center py-3">取消</button>
+                <button class="cta-btn flex-1 justify-center py-3 confirm-pay" data-pkg-id="${pkgId}">模拟支付成功</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('.confirm-pay').addEventListener('click', async () => {
+        try {
+            const { order } = await apiCall('POST', '/api/orders/mock-checkout', { package_id: pkgId });
+            const payResp = await apiCall('POST', `/api/orders/${order.id}/mock-pay`);
+            AuthState.entitlements = payResp.entitlements;
+            overlay.remove();
+            showToast(`支付成功！已获得 ${payResp.entitlements?.paid_unlocks_remaining || 0} 次解锁额度`, 'success');
+        } catch (err) {
+            showToast('支付失败: ' + err.message, 'error');
+        }
+    });
+}
+
+loadPackages();
+</script>
+</body>
+</html>

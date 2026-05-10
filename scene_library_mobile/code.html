@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scene Library - SceneShot AI</title>
+<script type='text/javascript' nonce='JPJNI3drgd/1X0eo8OIzqw==' src='https://contribution.usercontent.google.com/r-NgtaO9ueh0zrl7HEjs01t4gVowwiJ_Ej7eeE1HBrqTi9Hrr0vdAy49xlSVWv2CbH2BuQZ1VmD48Vr9nGOS49URB40o-Pj1SumMjwO4rPBx8AmGKPhr98ZvCzH3snYIbNwTsAOXKRcFtK0U0Y50cZ3BEH3-1nb_L46Dc1or9kiSv-S-GJWbxmuaPTKqeW9KHvDRPLtZaeTldDiBmjDqFdMzpFkYrZ84VDqzfudtkEhjLEd9nbhtXm4kKXcYINeOdXeeuDwKkHO4Qup-0g-7u5Icgr5PrqRUaSYS5CPXMOU0due7XQLJpFjMi7XemDR6_HcRjBgNQw3zEzEJpce_-aZYH1qzaVCn1qLhi2BArpl5uDp-W9t7Ky0zPlGPcviO7yUauw2A1G57yagqhWNJcJCAtpZap0ZKtsSzyYDFFrsoh1tA7lr0BFLRuXJacT5GGhT10elE4vcABn-Z9_PTZiDRNo5e8D7IHDfvRRUvZLhe_N2vy0wf6nICRTYP82btOIfwXbx4scBb9puAC5u4HQ7nOVN4emAU_5D5DiBQfiTvnxi8-LP7kq_ad3J0P4TlatRTV7s2hw1tiVFyhVMxyYrq944LKMolVdNKvgposL3-735jbKvtBu7T18RVXcFKucIRcGZXdIASIz_LM-ONFujYYc0lZW4Eo_RZGVycwAh3V5o94PXwXkB2QN-OjJKK0p9cE9HrbI3eWmc87s-Zi-r1RX99WHeXVoL-1MMCIM2dh-YJcDyh9k1N9BP6dIPTwCwGrVb5-kH2xILQ6h2XEdYcoaNBn9kvidA4bIrg'></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f3f4f5",
+                      "on-primary-container": "#efefff",
+                      "on-secondary-fixed-variant": "#6900b3",
+                      "secondary": "#841cd8",
+                      "on-surface": "#191c1d",
+                      "on-tertiary-container": "#f3f0ef",
+                      "tertiary-fixed": "#e5e2e1",
+                      "outline": "#747687",
+                      "surface-dim": "#d9dadb",
+                      "on-background": "#191c1d",
+                      "inverse-primary": "#b8c4ff",
+                      "background": "#f8f9fa",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-secondary-fixed": "#2c0050",
+                      "surface-container-high": "#e7e8e9",
+                      "tertiary-container": "#6e6d6d",
+                      "surface-variant": "#e1e3e4",
+                      "error": "#ba1a1a",
+                      "surface-container": "#edeeef",
+                      "primary-fixed-dim": "#b8c4ff",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "inverse-on-surface": "#f0f1f2",
+                      "primary": "#0041de",
+                      "primary-fixed": "#dde1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-bright": "#f8f9fa",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#565555",
+                      "inverse-surface": "#2e3132",
+                      "on-primary-fixed-variant": "#0036bc",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#fffbff",
+                      "primary-container": "#2d5cfe",
+                      "outline-variant": "#c4c5d9",
+                      "surface-container-highest": "#e1e3e4",
+                      "surface-tint": "#0f4aef",
+                      "on-primary-fixed": "#001355",
+                      "surface": "#f8f9fa",
+                      "secondary-fixed": "#f0dbff",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-surface-variant": "#434656",
+                      "secondary-container": "#9e42f2",
+                      "secondary-fixed-dim": "#ddb7ff",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "margin-desktop": "64px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-xl": [
+                              "Outfit"
+                      ],
+                      "headline-lg-mobile": [
+                              "Outfit"
+                      ],
+                      "label-bold": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "caption": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg": [
+                              "Outfit"
+                      ],
+                      "headline-md": [
+                              "Outfit"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl border-b border-white/20 dark:border-outline-variant/10 shadow-sm transition-transform scale-95 active:scale-90 w-full">
+<a class="font-display-xl text-headline-md tracking-tighter bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-80 transition-all duration-300" href="#">SceneShot AI</a>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary pb-1 font-body-md text-body-md hover:opacity-80 transition-all duration-300" href="#">Scenes</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-80 transition-all duration-300" href="#">Pricing</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-80 transition-all duration-300" href="#">Examples</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-80 transition-all duration-300" href="#">FAQ</a>
+</nav>
+<div class="hidden md:flex gap-4 items-center">
+<button class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300">Sign In</button>
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary rounded-full px-6 py-2 font-label-bold text-label-bold hover:brightness-110 active:scale-95 transition-all shadow-[0_4px_14px_rgba(0,65,222,0.39)]">Generate Now</button>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-grow pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header -->
+<div class="mb-8 mt-4">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2">Choose your scene</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Select a base style for your AI generation.</p>
+</div>
+<!-- Filters (Horizontal Scroll) -->
+<div class="flex overflow-x-auto gap-3 pb-4 mb-6 scrollbar-hide -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-bold text-label-bold whitespace-nowrap shadow-sm">All Scenes</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-highest transition-colors">Sports</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-highest transition-colors">Professional</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-highest transition-colors">Fantasy</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-highest transition-colors">Casual</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-highest transition-colors">Sci-Fi</button>
+</div>
+<!-- 2-Column Grid -->
+<div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+<!-- Card 1: Highlighted Baseball Scene -->
+<div class="group relative rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] bg-surface-container-lowest border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-lg">
+<div class="aspect-[3/4] relative w-full overflow-hidden bg-surface-variant">
+<img alt="Baseball Scene" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A dynamic action shot of a baseball player mid-swing in a stadium. The lighting is bright and cinematic, resembling a high-end sports photography shoot. The overall aesthetic is clean, energetic, and modern, fitting a high-quality AI generated portrait style. The colors are vivid, with strong primary blues and crisp whites highlighting the &#39;magic made simple&#39; theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8lihSjlt5XjHpsuDr8XYmt7Ug5CQwE0iIblH99wSOPcQoJlyo6t7QHDQ_hvkKuybXxxIZ19ii7kDrBNVcyGZDlyyan7Y2RZcfYaLSIDcK3k6tsgXlXXxmWNyOSqACw0BYCnz9r0GamAHAs5hgPkjr2GAImgkv4BXGAWQI2ccIGC1pRijdyGCNDvfT2uOQ22hL2AD9gct1WJ72Hox8FymLwUmm6P2PMxhRVJmZWb7VwSSw8OOlc4We62DcLYa5erqS6fo8admk0Beo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute top-2 right-2 bg-primary/90 text-on-primary backdrop-blur-md px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-caption text-caption">Popular</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-lowest relative">
+<h3 class="font-label-bold text-label-bold text-on-surface mb-1">Baseball Star</h3>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Dynamic action shot</p>
+<div class="absolute bottom-3 right-3 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: &#39;FILL&#39; 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] bg-surface-container-lowest transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+<div class="aspect-[3/4] relative w-full overflow-hidden bg-surface-variant">
+<img alt="Professional Studio" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A clean, professional corporate headshot set in a modern, brightly lit office studio. The subject is softly lit with high-key lighting, emphasizing a trustworthy and polished look. The background is a slightly blurred, bright minimalist workspace. The aesthetic aligns with a premium, high-definition tech style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgsYDdFbsghswNL-SZtgGm01rPOo3JpSVna_0d7WsSlNgCe3Y6TTcRmhNVjj_hW_uKtJp0m6EcuNXo3euqyAutJ8WES4kgmeYcIUso_iLX6d0-Wv1jdPoiduqJpEYvVd-PHVmIvOmSqO0PBCUGWrqR5ZzN_IdRl0JKYg7IjzHcDkK-h6XAkRcVKU6nh5xxnbXdR1NXIWAz7SnT6qMNBN_tf9R3RwveNbZFOnbm4y9iIauB9v7Tq5r7Pyg2SCFXEnHRJhR9gz-lKSQe"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="p-3 bg-surface-container-lowest">
+<h3 class="font-label-bold text-label-bold text-on-surface mb-1">CEO Studio</h3>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Polished corporate look</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] bg-surface-container-lowest transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+<div class="aspect-[3/4] relative w-full overflow-hidden bg-surface-variant">
+<img alt="Fantasy Forest" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A magical, ethereal portrait set in a glowing fantasy forest. The scene features soft, luminescent lighting with vibrant hues of violet and deep blue, matching the brand&#39;s secondary colors. The atmosphere is mystical yet cleanly rendered, showcasing &#39;magic made simple&#39; through highly detailed, AI-generated glassmorphic elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB0LwvG4fwcxNSELeb17ilsx8dTzLtL8LSoNLlSAnsPRA-kGUXOq9_yYfg7WxBvrwXD9JA74bUSJAzIQFAMsvQNebmtVkIDpY-i3wU7wB8xmjmaM38K_zict-BsNZc-yq3hBU0KqXR4N7XJJa7IjJbbU_9-A7mpxTPBeEvqjn1B3qMuDb4senrJL9lbZsSd5zzoTfmpFXRlB_uqCVMO088VqXlpdPgbe36-kupK0fpk14k1Ax2Od6VvExNct_jKE0nLT_IR14C-OSl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="p-3 bg-surface-container-lowest">
+<h3 class="font-label-bold text-label-bold text-on-surface mb-1">Mystic Woods</h3>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Ethereal fantasy</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] bg-surface-container-lowest transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+<div class="aspect-[3/4] relative w-full overflow-hidden bg-surface-variant">
+<img alt="Neon City" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A futuristic cyberpunk portrait illuminated by vibrant neon lights in a rainy city street at night. The lighting is dramatic, with strong contrasts and glowing electric blue and magenta accents. The scene looks high-end and trendy, perfectly capturing a modern, forward-leaning tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl87FSCu0SqOCpAqnUSJ7y3GMQAijFZutlFNCEdKWPWmGBRx6bK0-vF9IQKGeaR4rNaT9qShKPEfiOxvQZEG_AgACcFPCr_1Kg-5tCWZ8LsOVVlw77fFAMNyOpdvXIbNhTIDdWyb1uJH5OreW2XieXq6sYEo3cukTe-DKfpALTntI_8O2FrqXhIdBb0hzhaLyzE_Qf2cOPENFBRDmd5Hbm5QHB8da_wezW-MxKG8K-06uSPRKoqSYsKuinzCuaDZBWamK31DkCmy7A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute top-2 right-2 bg-surface-variant/80 text-on-surface-variant backdrop-blur-md px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="font-caption text-caption">New</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-lowest">
+<h3 class="font-label-bold text-label-bold text-on-surface mb-1">Neon Drift</h3>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Futuristic night vibe</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group relative rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] bg-surface-container-lowest transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+<div class="aspect-[3/4] relative w-full overflow-hidden bg-surface-variant">
+<img alt="Casual Cafe" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A relaxed, candid lifestyle portrait of someone sitting in a bright, modern minimalist cafe. Natural sunlight streams in, creating soft shadows and a warm, inviting atmosphere. The aesthetic is clean, airy, and relatable, using a light color palette with expansive white space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGX3Qx1ayAPfUOEsyZkrQneX590KT-C3VOnXVfmE5CnoxhMtplC2pvdo9hDs6RcEiOeV_CnX2R3fR-9OAilfqljjbqNY9p6Gv1RsRxQpVIiduP7B2Ipxe0jNzG6QshaKFFYoIJj1G95uL3PgAeDALIl5eyBXK9ayEqHPZIVEkzCu2rOE00n67vnjhVQxEXkownnnf4RH8y-hL_bwiLmii_2qr7QRAcnVNNr-JYMEZBgu2NvuIljOZi6PkcTF7eg8bn-IJlFaD4QhsM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="p-3 bg-surface-container-lowest">
+<h3 class="font-label-bold text-label-bold text-on-surface mb-1">Morning Coffee</h3>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Casual lifestyle</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group relative rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] bg-surface-container-lowest transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+<div class="aspect-[3/4] relative w-full overflow-hidden bg-surface-variant">
+<img alt="Fitness Gym" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A high-energy fitness portrait set in a modern, industrial-style gym. The lighting is dramatic and directional, highlighting muscle definition and movement. The color palette features cool grays and electric blue accents, conveying strength and a premium tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS2dP_ogU8slhETug32urApnruwg6p2VqJJUYdjLfAJbybxU0rjfbkCRx02klvEOEEkANkIAYjf7B9RsKGXVH4goxip9rQZwVe2Ea9qtbraYsS0-DgbklD-CWBHbMBghO3r-g7az6QSEa1_iBYdwp7fyRQAggvxS-Wvi7Z3HaqyIj60edOOxBAI9eltMp_fOAUo1ufByYXX1ZqqfOKHGDri1DTT9sK-hvSw8Bd7x-2_AaFCNDPtKfQG_MCUk5hcgW_HL1vbtO6kBuM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="p-3 bg-surface-container-lowest">
+<h3 class="font-label-bold text-label-bold text-on-surface mb-1">Power Lift</h3>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Intense workout</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-col items-center pb-safe bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-2xl docked full-width bottom-0 rounded-t-lg border-t border-white/20 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] active:scale-98 transition-all">
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary rounded-full px-8 py-3 flex items-center justify-center gap-2 w-full mx-margin-mobile mb-4 hover:brightness-110 font-label-bold text-label-bold mt-4 shadow-[0_8px_30px_rgba(45,92,254,0.3)]">
+<span class="material-symbols-outlined">auto_awesome</span>
+            Generate Now
+        </button>
+</nav>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/20 bg-surface-container-lowest dark:bg-surface-container-low flat no shadows mt-auto hidden md:flex">
+<div class="font-display-xl text-headline-md text-on-surface mb-4 md:mb-0">SceneShot AI</div>
+<div class="flex flex-wrap gap-4 justify-center md:justify-end">
+<a class="text-on-surface-variant opacity-60 hover:opacity-100 font-caption text-caption hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant opacity-60 hover:opacity-100 font-caption text-caption hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant opacity-60 hover:opacity-100 font-caption text-caption hover:text-primary transition-colors" href="#">Contact Support</a>
+<a class="text-on-surface-variant opacity-60 hover:opacity-100 font-caption text-caption hover:text-primary transition-colors" href="#">Affiliate Program</a>
+</div>
+<div class="w-full text-center md:hidden mt-4 text-on-surface-variant opacity-60 font-caption text-caption">
+            © 2024 SceneShot AI. Magic made simple.
+        </div>
+</footer>
+</body></html>

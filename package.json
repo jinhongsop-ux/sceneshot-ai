@@ -1,0 +1,12 @@
+{
+  "name": "sceneshot-ai",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx wrangler pages dev . --port 8788",
+    "deploy": "npx wrangler pages deploy ."
+  },
+  "devDependencies": {
+    "wrangler": "^3.99.0"
+  }
+}
