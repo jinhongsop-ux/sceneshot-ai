@@ -1,0 +1,3 @@
+SceneShot AI deployment trigger
+Triggered after Vercel Git binding.
+Commit: v0.4.5 production sync
