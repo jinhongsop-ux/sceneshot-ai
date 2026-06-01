@@ -1,12 +1,15 @@
 {
   "name": "sceneshot-ai",
-  "version": "1.0.0",
+  "version": "0.7.0",
   "private": true,
   "scripts": {
-    "dev": "npx wrangler pages dev . --port 8788",
-    "deploy": "npx wrangler pages deploy ."
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "devDependencies": {
-    "wrangler": "^3.99.0"
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
