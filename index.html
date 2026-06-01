@@ -1,199 +1,43 @@
-<!DOCTYPE html>
-<html class="light" lang="zh-CN">
+<!doctype html>
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SceneShot AI - 秒级生成你的病毒式AI体育场照片</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/shared.css"/>
-<script src="js/shared.js"></script>
-<script>tailwind.config = TAILWIND_CONFIG;</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SceneShot AI v0.4.5｜AI 场景写真生成工具</title>
+<meta name="description" content="上传一张照片，选择一个场景，生成你的爆款 AI 场景写真。免费生成带水印预览，满意后 ¥2.99 解锁高清无水印。"/>
+<style>
+:root{--bg:#fff7f1;--card:#fffdfb;--ink:#211816;--muted:#7e6c65;--line:#eadbd2;--hot:#f75f9b;--violet:#8b5cf6;--green:#3fbf9b;--shadow:0 28px 80px rgba(70,42,32,.12);--r:28px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:radial-gradient(circle at 20% 0%,#ffe4f1 0,#fff7f1 38%,#f7fbf3 100%);color:var(--ink)}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.shell{max-width:1180px;margin:0 auto;padding:0 22px}.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(22px);background:rgba(255,247,241,.78);border-bottom:1px solid rgba(234,219,210,.7)}.topbar .shell{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px}.mark{width:44px;height:44px;border-radius:16px;background:linear-gradient(135deg,var(--hot),var(--violet));color:white;display:grid;place-items:center;font-weight:900;box-shadow:0 16px 34px rgba(247,95,155,.28)}.brand small{display:block;color:var(--muted);font-size:12px}.nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.nav a,.ghost,.primary{border:1px solid transparent;border-radius:999px;padding:10px 15px;font-weight:700;font-size:14px}.nav a:hover,.ghost{border-color:var(--line);background:rgba(255,255,255,.62)}.primary{background:linear-gradient(135deg,var(--ink),#4a2d45);color:white;box-shadow:0 18px 34px rgba(30,20,18,.18);cursor:pointer}.primary:hover{transform:translateY(-1px)}.hero{padding:78px 0 42px}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.66);border-radius:999px;padding:9px 13px;color:#8f5067;font-size:13px;font-weight:800}.h1{font-size:clamp(42px,7vw,82px);line-height:1.02;letter-spacing:-.07em;margin:18px 0 20px;max-width:920px}.lead{font-size:clamp(17px,2.1vw,22px);line-height:1.75;color:var(--muted);max-width:760px;margin:0 0 30px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.mini{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px;font-weight:700}.phone{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:38px;padding:18px;box-shadow:var(--shadow);transform:rotate(1deg)}.compare{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px}.mock-img{min-height:430px;border-radius:28px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:linear-gradient(150deg,#f5ded1,#ffffff);position:relative}.mock-img.after{background:radial-gradient(circle at 30% 20%,#fff 0 8%,transparent 9%),linear-gradient(145deg,#2c1732,#f85f9d 48%,#fff4cc)}.mock-img:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.28),transparent 45%)}.mock-title{position:relative;font-weight:900;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.36)}.before .mock-title{color:#6d5b54;text-shadow:none}.watermark{position:absolute;right:22px;bottom:22px;border:1px solid rgba(255,255,255,.5);color:white;background:rgba(0,0,0,.22);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900}.section{padding:46px 0}.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:22px}.section h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.04em;margin:0}.section p{color:var(--muted);line-height:1.75}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:0 14px 38px rgba(70,42,32,.07);transition:.18s}.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.cover{height:220px;border-radius:22px;background:var(--grad);position:relative;overflow:hidden;margin-bottom:14px}.cover:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 45% 28%,rgba(255,255,255,.9) 0 7%,transparent 8%),linear-gradient(to top,rgba(0,0,0,.45),transparent 56%)}.tagrow{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.tag{border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.6);border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800;color:#7b485c}.tag.dark{background:#211816;color:#fff;border-color:#211816}.card h3{margin:8px 0;font-size:21px}.price{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:13px;margin-top:13px;color:var(--muted);font-size:13px}.detail{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}.panel{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:0 12px 35px rgba(70,42,32,.07)}.form{display:grid;gap:14px}.field label{font-size:13px;color:var(--muted);font-weight:900;display:block;margin-bottom:7px}.input{width:100%;border:1px solid var(--line);border-radius:16px;padding:13px 14px;background:#fff;color:var(--ink)}.upload{border:2px dashed #e7c6d7;border-radius:22px;background:rgba(255,255,255,.58);padding:22px;text-align:center}.results{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}.result-img{height:300px;border-radius:24px;background:linear-gradient(135deg,#321a35,#ff6aa7 52%,#ffeab1);position:relative;overflow:hidden;padding:20px;color:white}.result-img:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.9) 0 8%,transparent 9%),linear-gradient(to top,rgba(0,0,0,.48),transparent 55%)}.result-img>*{position:relative}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{padding:20px;border-radius:24px;background:rgba(255,255,255,.66);border:1px solid var(--line)}.step b{font-size:36px;color:var(--hot)}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;border-bottom:1px solid var(--line);padding:12px;font-size:14px}.muted{color:var(--muted)}.hide{display:none!important}.toast{position:fixed;right:20px;bottom:20px;z-index:100;background:#211816;color:white;border-radius:16px;padding:13px 16px;box-shadow:var(--shadow);font-weight:800}@media(max-width:900px){.hero-grid,.detail{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.section-head{display:block}.mock-img{min-height:300px}}@media(max-width:620px){.topbar .shell{height:auto;padding-top:12px;padding-bottom:12px;align-items:flex-start;gap:10px}.nav{justify-content:flex-end}.cards,.steps,.results{grid-template-columns:1fr}.h1{font-size:42px}.hero{padding-top:44px}.compare{grid-template-columns:1fr}.mock-img{min-height:240px}}
+</style>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
-<main class="pt-[80px] md:pt-[100px] pb-32">
-<!-- Hero Section -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center mb-24 md:mb-32">
-<div class="badge mb-8 reveal">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-<span data-i18n="index.badge">AI 生成效果</span>
-</div>
-<h1 class="font-display-xl text-display-xl md:text-[72px] md:leading-[80px] text-on-background mb-6 max-w-4xl reveal" data-i18n="index.hero.title">
-    秒级生成你的病毒式 AI 体育场照片
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10 reveal" data-i18n="index.hero.desc">
-    上传一张照片，即可将其转化为逼真的韩国棒球直播风格场景、旅行快照或电影级街拍。
-</p>
-<div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto reveal">
-<a href="create.html" class="w-full sm:w-auto cta-btn text-lg px-8 py-4 justify-center">
-    <span data-i18n="index.hero.cta">生成我的照片</span>
-    <span class="material-symbols-outlined">arrow_forward</span>
-</a>
-<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption opacity-70 mt-2 sm:mt-0">
-<span class="material-symbols-outlined text-[16px]">lock</span>
-    <span data-i18n="index.hero.private">私密上传</span>
-</div>
-</div>
-<!-- Before/After Module -->
-<div class="comparison-slider w-full max-w-5xl mt-16 md:mt-20 relative overflow-hidden shadow-[0_30px_80px_rgba(35,31,27,0.08)] bg-surface-container-lowest border border-outline-variant/20 group h-[320px] md:h-[560px] reveal-scale">
-<!-- Before -->
-<div class="before-wrapper">
-<img alt="Original photo" class="before-img w-full h-full object-cover grayscale-[20%] opacity-95" src="https://lh3.googleusercontent.com/aida/ADBb0uh12Us1VznnT-FmDwuP50r0hoezusFcJ-DYObUnBS1K0_k6UH_f_3XPYeQh-Uugm2uUsFlRqeIGf2hJbNrq_AkA3rAUhOpLgKfpF2urggJzIP-sjLH3WcLXoK7_Ojwqt_W4v6gT-kkBHUgcMMv1CI7-zvGcxAYUx1ymkRinFWuDKL9gmC1u3uocOZTQdW1-qccKUmvrpqtqTRm2FwPIYAjOxpfXX8fi8c-FfhG4RHvdOYG1DyfMqss0e4hzk_PqGROGdXERPaioiuk"/>
-<div class="absolute top-6 left-6 px-4 py-2 bg-surface/80 backdrop-blur-md rounded-full font-label-bold text-label-bold text-on-surface shadow-sm border border-outline-variant/20" data-i18n="index.before">原图</div>
-</div>
-<!-- After -->
-<img alt="AI Enhanced Korean baseball scene" class="after-img w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uieCYhdCpy2l_vgHYiMbC6NWJxtO9Pfec-bo-8x28Cf2hiB5wE3LPtRleV1XvHcqHuwxDnn1CTHa69lIThNpWUMDUPCvS2c76LoaSxVTgsxB-oT30MgjYvJzwvDFZRKW3uZ6W-5KsUjH9MrJQv43iTabptUaNSf5FmfjpnyqrjOmx6hi7Gw9VGT2ckIcVrYCPxQNZ6E-fnov729bGxLlfIPLXf68787X0r4cw9aZ-006Tr9YPYn45czFtw1ZDR6lqmrUKsYlpNhK0I"/>
-<div class="absolute top-6 right-6 px-4 py-2 bg-primary/90 backdrop-blur-md rounded-full font-label-bold text-label-bold text-on-primary shadow-sm flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-    <span data-i18n="index.after">AI 增强</span>
-</div>
-<!-- Slider Handle -->
-<div class="slider-handle">
-<div class="handle-circle">
-<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
-</div>
-</div>
-</div>
-</section>
-<!-- 3-Step Process -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 md:mb-32">
-<h2 class="font-headline-lg text-headline-lg text-center mb-4" data-i18n="index.steps.title">三步搞定</h2>
-<p class="text-on-surface-variant font-body-lg text-body-lg text-center mb-12 max-w-2xl mx-auto" data-i18n="index.steps.desc">30 秒内将普通照片变为非凡的 AI 生成场景。</p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-<!-- Step 1 -->
-<div class="premium-card p-8 text-center reveal reveal-stagger-1">
-<div class="w-14 h-14 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
-<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">cloud_upload</span>
-</div>
-<div class="font-label-bold text-label-bold text-primary mb-2" data-i18n="index.step1.label">第一步</div>
-<h3 class="font-headline-md text-headline-md mb-3" data-i18n="index.step1.title">上传自拍</h3>
-<p class="text-on-surface-variant font-body-md text-body-md" data-i18n="index.step1.desc">拍摄或上传一张清晰的肖像照片。我们的 AI 在光线充足时效果最佳。</p>
-</div>
-<!-- Step 2 -->
-<div class="premium-card p-8 text-center reveal reveal-stagger-2">
-<div class="w-14 h-14 bg-secondary-container rounded-full flex items-center justify-center mx-auto mb-6">
-<span class="material-symbols-outlined text-secondary text-[28px]" style="font-variation-settings: 'FILL' 1;">photo_library</span>
-</div>
-<div class="font-label-bold text-label-bold text-secondary mb-2" data-i18n="index.step2.label">第二步</div>
-<h3 class="font-headline-md text-headline-md mb-3" data-i18n="index.step2.title">选择场景</h3>
-<p class="text-on-surface-variant font-body-md text-body-md" data-i18n="index.step2.desc">浏览我们精美的 AI 生成场景库，选择你喜欢的。</p>
-</div>
-<!-- Step 3 -->
-<div class="premium-card p-8 text-center reveal reveal-stagger-3">
-<div class="w-14 h-14 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
-<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-</div>
-<div class="font-label-bold text-label-bold text-primary mb-2" data-i18n="index.step3.label">第三步</div>
-<h3 class="font-headline-md text-headline-md mb-3" data-i18n="index.step3.title">生成魔法</h3>
-<p class="text-on-surface-variant font-body-md text-body-md" data-i18n="index.step3.desc">我们的 AI 在几秒内将你的肖像无缝融入所选场景。</p>
-</div>
-</div>
-</section>
-<!-- Trending Scenes -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 md:mb-32">
-<div class="flex justify-between items-end mb-8">
-<div>
-<h2 class="font-headline-lg text-headline-lg" data-i18n="index.trending.title">热门场景</h2>
-<p class="text-on-surface-variant font-body-md text-body-md mt-1" data-i18n="index.trending.desc">本周最受欢迎的场景</p>
-</div>
-<a href="scenes.html" class="text-primary font-label-bold text-label-bold flex items-center gap-1 hover:gap-2 transition-all"><span data-i18n="index.trending.viewall">查看全部</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-<!-- Scene Card 1 -->
-<a href="scene-detail.html" class="group block reveal reveal-stagger-1">
-<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
-<img alt="Stadium Tour" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQliwK_uhW4xK9vMWR5sXYbW_6BNlxn73-ewnqDy3taAbzchfTqPhIpmG-dLzf3WIeDfcIO601Uajh4NyqAtC1LzX5IOrKXQL4L1Zy9w4ub_qPjhJAEVvxh6V13aNYaaTOzLRazfLjQtFIFqWieFUOjUa4xFya4FZB1UaZDjfeI0bEk47u-Gv-P9FoT9m9BhhZS7Esu6GDhr4-Fed9V0tB9imYcHRgykLdus4qKan9who9BxvfXKWx5Wg79miyfqQ-FDJfc13s4j5P"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
-<span class="text-white font-headline-md text-headline-md">Stadium Tour</span>
-<span class="text-white/80 font-caption text-caption flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 5 Credits
-</span>
-</div>
-<div class="absolute top-3 right-3 bg-primary text-on-primary px-2.5 py-1 rounded-full font-caption text-caption font-semibold">Trending</div>
-</div>
-</a>
-<!-- Scene Card 2 -->
-<a href="scene-detail.html" class="group block reveal reveal-stagger-2">
-<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
-<img alt="VIP Access" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR6FH3VXD4wXhYlJWuT_yl3RjBYu5tO04ePeSi_m4jYlXhj9EH6l5WrluLBOsGIlOOE_J0NvkQiw1CZR7SIP6zUGtSQ2JfGh6AsglodPhMkkqpPh2DqerLbt2Jx6Y46J8UKUvJhPIaxoLg6hvZCBB58cJmY_0x6NGcGViG892R5SW6WxSxe2IIx6FwAytTgeklIMrumKFiBUZx81_YRhMKjL4Ps-Kl6gC6KFq2cmL5znkRRTWN61xSElaHYYfqBQfSJLQdsgvxK8ut"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
-<span class="text-white font-headline-md text-headline-md">VIP Access</span>
-<span class="text-white/80 font-caption text-caption flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 8 Credits
-</span>
-</div>
-</div>
-</a>
-<!-- Scene Card 3 -->
-<a href="scene-detail.html" class="group block reveal reveal-stagger-3">
-<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
-<img alt="Summer Fest" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBien5W-wefKsYYDu6Sm9K361TQPRzylb7HNLiPm7V490uqhnxXU4pXXziFx8dbXT0-4u6n3qvt2w9rzmu3VegtJWDTPuXBIz7CqqADMT1y0WVoj3jkl236nqER2FG8gPj2pcSNblU_XgZBF4OfOio1YzILxcS9Ii7KOrH25wqedw_PvbwyKILz3XCJJK8oxVGesiW7ihJta9k6ygSVCFTCXszTQWZtEPDm5u9lHVhPZudNMUoBoiA2gRe0WONaGtboAXux4Dly6f3P"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
-<span class="text-white font-headline-md text-headline-md">Summer Fest</span>
-<span class="text-white/80 font-caption text-caption flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 6 Credits
-</span>
-</div>
-</div>
-</a>
-<!-- Scene Card 4 -->
-<a href="scene-detail.html" class="group block reveal reveal-stagger-4">
-<div class="relative rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(35,31,27,0.06)] border border-outline-variant/10 hover:-translate-y-2 transition-all duration-300">
-<img alt="Premiere Night" class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoyc8vV0lwvxsujwbtNiH7mo8ftYPh0MGFGcBdxssmE0vbAmJl6PeLpGnRBDOLu6mb5YSkkQfdKD4M_fkVabLDPK_zu01q4hv8XcBMIhgwXIPK7or7IvCHJv_JsARdJE6KsKfotM4IX4ksjbF-zeJDwMaBKv1f6JNngYy_QTWKmX3Hpkw1fvkPVD-Pvzv34-Q3hpR8Ha3Ce0DremQHSJWCdRYcX155O5tpzgEvZbrQq5MFqwvHc6h1BujunSF5o5AN_drU4i-Wr-PS"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4">
-<span class="text-white font-headline-md text-headline-md">Premiere Night</span>
-<span class="text-white/80 font-caption text-caption flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">toll</span> 10 Credits
-</span>
-</div>
-</div>
-</a>
-</div>
-</section>
-<!-- Social Proof -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 md:mb-32">
-<div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-center reveal">
-<div class="flex flex-col items-center">
-<span class="font-display-xl text-headline-lg text-on-background">10K+</span>
-<span class="font-body-md text-body-md text-on-surface-variant">活跃用户</span>
-</div>
-<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
-<div class="flex flex-col items-center">
-<span class="font-display-xl text-headline-lg text-on-background">50K+</span>
-<span class="font-body-md text-body-md text-on-surface-variant">照片已生成</span>
-</div>
-<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
-<div class="flex flex-col items-center">
-<span class="font-display-xl text-headline-lg text-on-background">4.9</span>
-<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
-<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
-</span>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
-<div class="bg-surface-container-high rounded-3xl p-12 md:p-20 relative overflow-hidden reveal">
-<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-[0.06] pointer-events-none"></div>
-<div class="absolute -bottom-16 -left-16 w-48 h-48 bg-secondary rounded-full blur-[80px] opacity-[0.06] pointer-events-none"></div>
-<h2 class="font-display-xl text-headline-lg-mobile md:text-display-xl mb-4 text-on-surface" data-i18n="index.cta.title">准备好创造魔法了吗？</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto" data-i18n="index.cta.desc">加入数千用户的行列，开始用 20 个免费积分创作令人惊叹的 AI 照片。</p>
-<a href="create.html" class="cta-btn text-lg px-8 py-4 inline-flex">
-    <span data-i18n="index.cta.btn">免费开始</span>
-    <span class="material-symbols-outlined">arrow_forward</span>
-</a>
-</div>
-</section>
-</main>
+<body>
+<header class="topbar"><div class="shell"><a class="brand" href="#/"><span class="mark">SS</span><span><strong>SceneShot AI</strong><small>v0.4.5 · Scene Photo MVP</small></span></a><nav class="nav"><a href="#/scenes">场景</a><a href="#/create">生成</a><a href="#/history">结果</a><a href="#/admin">后台</a><a class="primary" href="#/create">立即生成</a></nav></div></header>
+<main id="app"></main>
 <script>
-renderNavbar('home');
-renderFooter();
-renderBottomBar();
+const scenes=[
+{id:'scene_kbb',slug:'korean-baseball-broadcast',title:'韩国棒球直播风格',cat:'爆款体育现场',hot:1,featured:1,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#25122e,#f65f9a 55%,#ffe9ac)',desc:'上传自拍，生成像被韩国棒球赛直播镜头捕捉到的看球现场照片。',sub:'像真的被体育直播拍到，适合小红书、抖音和朋友圈晒图。',tags:['爆款','女生适合','直播感','韩国棒球'],tips:['正脸或半身照效果最好','光线清晰','避免多人合照','不要遮挡脸部'],result:'生成一张仿佛你坐在韩国棒球赛观众席，被直播镜头捕捉到的氛围感照片。'},
+{id:'scene_tokyo',slug:'tokyo-night-street',title:'东京夜景街拍',cat:'城市街拍',hot:1,featured:1,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#15192e,#6257ff 48%,#ff93cb)',desc:'把普通自拍变成东京街头霓虹夜景里的电影感街拍。',sub:'适合头像、朋友圈九宫格、旅行感虚拟照片。',tags:['夜景','东京','街拍','氛围感'],tips:['半身照效果更自然','面部清晰','服装轮廓明显'],result:'生成霓虹、街灯、湿润路面与城市夜风氛围的东京街拍。'},
+{id:'scene_sakura',slug:'japanese-sakura-street',title:'日本樱花街拍',cat:'虚拟旅行',hot:1,featured:1,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#ffd6e8,#fff5fb 45%,#9bd8b8)',desc:'上传一张照片，获得春日樱花街道里的清透日系写真。',sub:'轻旅行感、春日感、适合女生头像和生活方式内容。',tags:['樱花','日系','春日','旅行感'],tips:['浅色衣服更容易出片','表情自然','单人照片优先'],result:'生成像在日本樱花街道中散步被随手拍下的写真。'},
+{id:'scene_kpop',slug:'kpop-concert-audience',title:'K-pop 演唱会观众席',cat:'演唱会现场',hot:1,featured:1,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#1d1036,#a855f7 45%,#22d3ee)',desc:'生成仿佛你在演唱会内场被灯光照亮的追星现场照片。',sub:'舞台灯、荧光棒、人群光海，强烈社交传播感。',tags:['K-pop','追星','演唱会','闪光灯'],tips:['脸部不要过暗','避免复杂背景','自拍/半身照均可'],result:'生成大场馆演唱会观众席视角，带舞台灯光和人群氛围。'},
+{id:'scene_hk',slug:'hong-kong-retro-portrait',title:'港风复古写真',cat:'复古写真',hot:0,featured:1,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#392311,#d55b3d 42%,#ffd18a)',desc:'把照片转成港风电影海报感的复古人像。',sub:'胶片色、霓虹、老街、复古镜头语言。',tags:['港风','复古','胶片','电影感'],tips:['五官清晰','侧脸/正脸均可','深色服装也适合'],result:'生成 90 年代港风电影剧照般的人像写真。'},
+{id:'scene_football',slug:'european-football-stand',title:'欧洲足球看台',cat:'体育现场',hot:0,featured:1,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#06351f,#28c76f 48%,#fff1a8)',desc:'生成像在欧洲足球赛现场看台被镜头捕捉的照片。',sub:'球场、人群、绿色草坪、现场欢呼感。',tags:['足球','看台','欧洲','赛事现场'],tips:['上半身清楚','表情自然','运动风服装更适合'],result:'生成欧洲足球看台现场照片，带真实比赛日氛围。'},
+{id:'scene_music',slug:'summer-music-festival',title:'夏日音乐节现场',cat:'音乐节现场',hot:1,featured:0,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#ffb703,#fb7185 48%,#38bdf8)',desc:'生成在户外音乐节夕阳和人群中的自由感照片。',sub:'适合朋友圈、抖音封面和夏日主题内容。',tags:['音乐节','夕阳','自由感','朋友圈'],tips:['笑容自然更好','避免多人合照','明亮照片优先'],result:'生成夕阳、舞台、人群与夏日空气感的音乐节照片。'},
+{id:'scene_redcarpet',slug:'movie-premiere-night',title:'电影首映红毯',cat:'红毯大片',hot:0,featured:0,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#2b1111,#c1121f 48%,#ffd166)',desc:'把自拍变成闪光灯下的明星红毯现场照片。',sub:'红毯、闪光灯、媒体区、明星感。',tags:['红毯','明星感','首映礼','闪光灯'],tips:['正脸清晰','妆容明显更出片','单人照优先'],result:'生成像电影首映礼媒体区抓拍的明星感大片。'},
+{id:'scene_cafe',slug:'seoul-cafe-candid',title:'首尔咖啡馆抓拍',cat:'生活方式',hot:0,featured:0,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#f3d8bd,#ffffff 48%,#b7e4c7)',desc:'生成韩系咖啡馆里自然放松的生活方式照片。',sub:'低成本获得“像朋友拍的好看日常”。',tags:['首尔','咖啡馆','韩系','日常写真'],tips:['日常自拍即可','光线明亮','自然表情最好'],result:'生成韩系咖啡馆桌边、窗光和生活感抓拍。'},
+{id:'scene_airport',slug:'airport-travel-snapshot',title:'机场出发感快照',cat:'虚拟旅行',hot:0,featured:0,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#dbeafe,#ffffff 46%,#c4b5fd)',desc:'生成像准备飞去旅行时在机场被随手拍下的照片。',sub:'适合旅行预告、朋友圈出发感内容。',tags:['机场','旅行','出发感','行李箱'],tips:['半身或全身都可','服装清晰','不要多人合照'],result:'生成机场航站楼、行李箱、玻璃窗光的旅行快照。'},
+{id:'scene_sapporo',slug:'sapporo-snow-street',title:'札幌雪景街拍',cat:'虚拟旅行',hot:0,featured:0,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#e0f2fe,#ffffff 42%,#94a3b8)',desc:'生成冬日北海道雪街里的清冷氛围写真。',sub:'雪景、围巾、路灯、日剧感。',tags:['札幌','雪景','冬日','日系'],tips:['脸部清晰','暖色服装更突出','避免强遮挡'],result:'生成在札幌雪夜街头的冬日电影感照片。'},
+{id:'scene_shanghai',slug:'shanghai-rooftop-night',title:'上海天台夜景',cat:'城市街拍',hot:0,featured:0,price:2.99,bundle:5.99,grad:'linear-gradient(135deg,#111827,#475569 44%,#f472b6)',desc:'生成城市天台夜景下的高级感社交头像。',sub:'都市感、风吹发丝、灯光背景，非常适合头像。',tags:['上海','天台','夜景','社交头像'],tips:['正脸或侧脸都可','轮廓清楚','避免低清原图'],result:'生成城市天台、远处灯光和高级夜景人像。'}
+];
+const $=s=>document.querySelector(s);const app=$('#app');const money=n=>'¥'+Number(n).toFixed(2);const store={gens:JSON.parse(localStorage.ss_gens||'[]'),scenes:JSON.parse(localStorage.ss_scenes||'null')||scenes};
+function save(){localStorage.ss_gens=JSON.stringify(store.gens);localStorage.ss_scenes=JSON.stringify(store.scenes)}function toast(t){let el=document.createElement('div');el.className='toast';el.textContent=t;document.body.appendChild(el);setTimeout(()=>el.remove(),2200)}function sceneBy(slug){return store.scenes.find(s=>s.slug===slug)||store.scenes[0]}function card(s){return `<article class="card"><a href="#/scene/${s.slug}"><div class="cover" style="--grad:${s.grad}"><div class="watermark">SceneShot Preview</div></div></a><div class="tagrow">${s.hot?'<span class="tag dark">爆款</span>':''}${s.tags.slice(0,3).map(t=>`<span class="tag">${t}</span>`).join('')}</div><h3>${s.title}</h3><p>${s.desc}</p><div class="price"><span>免费生成带水印预览</span><b>${money(s.price)} 解锁高清</b></div><p><a class="primary" href="#/create/${s.slug}">试试这个场景</a></p></article>`}
+function home(){app.innerHTML=`<section class="hero"><div class="shell hero-grid"><div><span class="badge">✨ SceneShot AI v0.4.5 · 已从 Prompt Library 转为场景写真工具</span><h1 class="h1">上传一张照片，生成你的爆款 AI 场景写真</h1><p class="lead">不用写提示词，不用修图。选择一个场景，几分钟生成适合小红书、抖音和朋友圈的 AI 写真。第一阶段主打韩国棒球直播风格。</p><div class="hero-actions"><a class="primary" href="#/create/korean-baseball-broadcast">立即生成我的照片</a><a class="ghost" href="#/scenes">查看效果案例</a></div><div class="mini"><span>免费带水印预览</span><span>${money(2.99)} 解锁 1 张高清</span><span>${money(5.99)} 解锁 3 张高清</span></div></div><div class="phone"><div class="compare"><div class="mock-img before"><b class="muted">Before</b><span class="mock-title">普通自拍</span></div><div class="mock-img after"><b style="color:white">After</b><span class="mock-title">韩国棒球直播风格</span><span class="watermark">SceneShot AI</span></div></div></div></div></section><section class="section"><div class="shell"><div class="steps"><div class="step"><b>1</b><h3>上传自拍</h3><p>游客可浏览、选择场景；生成前后续可接登录。</p></div><div class="step"><b>2</b><h3>选择场景</h3><p>用户只看场景效果，不接触隐藏提示词。</p></div><div class="step"><b>3</b><h3>满意后解锁</h3><p>先看带水印预览，再付费解锁高清无水印。</p></div></div></div></section><section class="section"><div class="shell"><div class="section-head"><div><h2>热门 AI 场景</h2><p>每个场景都是一个可售卖的小商品。</p></div><a class="ghost" href="#/scenes">全部场景</a></div><div class="cards">${store.scenes.filter(s=>s.featured||s.hot).slice(0,6).map(card).join('')}</div></div></section>`}
+function gallery(){app.innerHTML=`<section class="section"><div class="shell"><div class="section-head"><div><span class="badge">Scene Gallery</span><h2>选择一个场景开始生成</h2><p>前台展示场景效果、价格和上传入口；隐藏 Prompt 只属于后台和后端。</p></div><a class="primary" href="#/create">立即生成</a></div><div class="cards">${store.scenes.map(card).join('')}</div></div></section>`}
+function detail(slug){const s=sceneBy(slug);app.innerHTML=`<section class="section"><div class="shell detail"><div class="panel"><div class="cover" style="--grad:${s.grad};height:520px"><span class="watermark">带水印预览示意</span></div></div><div class="panel"><div class="tagrow">${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div><h1 class="h1" style="font-size:48px">${s.title}</h1><p class="lead">${s.sub}</p><p>${s.result}</p><h3>适合上传什么照片？</h3><ul>${s.tips.map(t=>`<li>${t}</li>`).join('')}</ul><div class="price"><span>免费生成带水印预览</span><b>${money(s.price)} 解锁高清无水印</b></div><div class="hero-actions"><a class="primary" href="#/create/${s.slug}">上传照片生成</a><a class="ghost" href="#/scenes">换个场景</a></div><h3>FAQ</h3><p><b>会暴露提示词吗？</b> 不会。SceneShot 的提示词资产只在后台/后端可见。</p><p><b>第一版支付怎么设计？</b> 单张 ${money(2.99)}，三张 ${money(5.99)}，不做复杂积分。</p></div></div></section>`}
+function create(slug){const s=sceneBy(slug);app.innerHTML=`<section class="section"><div class="shell"><div class="section-head"><div><span class="badge">Create Preview</span><h2>上传照片生成带水印预览</h2><p>当前线上同步版使用 Mock 预览，下一步接真实上传存储、AI API 与支付宝。</p></div></div><div class="detail"><form class="panel form" id="form"><div class="field"><label>选择场景</label><select class="input" name="scene">${store.scenes.map(x=>`<option value="${x.slug}" ${x.slug===s.slug?'selected':''}>${x.title}</option>`).join('')}</select></div><div class="upload"><p><b>上传自拍 / 半身照</b></p><input type="file" name="photo" accept="image/*" class="input"/><p class="muted">第一阶段：保存上传图 → 生成带水印预览 → 结果页解锁入口。</p></div><div class="field"><label>比例</label><select class="input" name="ratio"><option>4:5 小红书推荐</option><option>1:1 头像</option><option>3:4 写真</option><option>9:16 抖音封面</option></select></div><button class="primary" type="submit">生成带水印预览</button></form><div class="panel"><h3>当前场景：${s.title}</h3><p>${s.desc}</p><div class="cover" style="--grad:${s.grad};height:280px"><span class="watermark">SceneShot AI</span></div><div id="result"></div></div></div></div></section>`;$('#form').onsubmit=e=>{e.preventDefault();const slug=e.target.scene.value;const sc=sceneBy(slug);const g={id:'gen_'+Date.now(),scene:sc.title,slug:sc.slug,price:sc.price,time:new Date().toLocaleString(),unlocked:false,grad:sc.grad};store.gens.unshift(g);save();$('#result').innerHTML=resultBlock(g);toast('已生成带水印预览')};$('select[name=scene]').onchange=e=>location.hash='#/create/'+e.target.value}
+function resultBlock(g){return `<div class="results"><div class="result-img" style="background:${g.grad}"><h3>${g.scene}</h3><p>带水印预览图</p><span class="watermark">SceneShot AI Preview</span></div></div><div class="hero-actions"><button class="ghost" onclick="toast('已模拟下载带水印图')">下载带水印图</button><button class="primary" onclick="unlock('${g.id}')">${money(g.price)} 解锁高清无水印</button><a class="ghost" href="#/create/${g.slug}">再生成一张</a><a class="ghost" href="#/scenes">换个场景</a></div>`}
+function unlock(id){const g=store.gens.find(x=>x.id===id);if(g){g.unlocked=true;save();toast('已模拟解锁高清无水印，v0.7 接支付宝真实支付')}}
+function history(){app.innerHTML=`<section class="section"><div class="shell"><div class="section-head"><div><span class="badge">Results</span><h2>生成结果记录</h2><p>当前使用浏览器本地记录模拟，后续 v0.5/v0.6 改为服务端生成记录与用户高清解锁次数。</p></div></div>${store.gens.length?`<div class="cards">${store.gens.map(g=>`<article class="card"><div class="cover" style="--grad:${g.grad}"><span class="watermark">${g.unlocked?'HD Unlocked':'Preview'}</span></div><h3>${g.scene}</h3><p class="muted">${g.time}</p><div class="price"><span>${g.unlocked?'已解锁高清':'带水印预览'}</span><b>${g.unlocked?'可下载':'待解锁'}</b></div></article>`).join('')}</div>`:'<div class="panel"><p>还没有生成记录。先去生成一张韩国棒球直播风格照片。</p><a class="primary" href="#/create/korean-baseball-broadcast">立即生成</a></div>'}</div></section>`}
+function admin(){app.innerHTML=`<section class="section"><div class="shell"><div class="section-head"><div><span class="badge">Scene Product Admin · Static Preview</span><h2>AI 场景产品管理后台</h2><p>线上同步版先展示后台结构。真正持久化新增/编辑场景，需要 v0.5 接 Vercel KV / Supabase / 数据库。</p></div><button class="primary" onclick="resetScenes()">恢复默认场景</button></div><div class="panel"><h3>后台定位</h3><p>后台不是文章 CMS，而是 AI 场景商品管理：场景文案、示例图、隐藏提示词、价格、生成参数、上架状态。</p><table class="table"><thead><tr><th>场景</th><th>状态</th><th>价格</th><th>隐藏 Prompt</th></tr></thead><tbody>${store.scenes.map(s=>`<tr><td>${s.title}</td><td>${s.hot?'热门':'已上架'}</td><td>${money(s.price)}</td><td>仅后台/后端可见，前台不展示</td></tr>`).join('')}</tbody></table></div><div class="panel" style="margin-top:18px"><h3>下一步真正后台字段</h3><p class="muted">Hidden Prompt Recipe、Hidden Negative Recipe、Before/After 示例图、价格配置、是否上架、生成记录、订单、手动补发高清解锁次数。</p></div></div></section>`}
+function resetScenes(){localStorage.removeItem('ss_scenes');location.reload()}function route(){const h=location.hash||'#/';const p=h.slice(1);if(p.startsWith('/scene/'))return detail(p.replace('/scene/',''));if(p.startsWith('/create/'))return create(p.replace('/create/',''));if(p==='/scenes')return gallery();if(p==='/create')return create('korean-baseball-broadcast');if(p==='/history')return history();if(p==='/admin')return admin();home()}window.addEventListener('hashchange',route);route();
 </script>
 </body>
 </html>
